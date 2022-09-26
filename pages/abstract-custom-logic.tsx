@@ -30,12 +30,6 @@ export default (): ReactElement => {
   }, [])
 
   useEffect(() => {
-    const codeSample: string = window.localStorage.getItem('4-form-id-code-sample')
-    const sampleForm: Form = JSON.parse(codeSample)
-    setUserGeneratedForm(sampleForm)
-  }, [])
-
-  useEffect(() => {
     window.localStorage.setItem(pageId, formId)
   }, [formId])
 
@@ -104,6 +98,8 @@ export default (): ReactElement => {
         form={returnForm(formId)}
       />
       <FormEditor
+        form={userGeneratedForm}
+        setForm={setUserGeneratedForm}
         open={formEditorOpen}
         onClose={(): void => {
           setFormEditorOpen(false)

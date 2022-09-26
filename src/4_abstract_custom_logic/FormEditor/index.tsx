@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { Dispatch, ReactElement, SetStateAction, useState, useEffect } from 'react'
 
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
@@ -15,16 +15,29 @@ import 'prismjs/themes/prism.css'
 
 import isValidJSON from './isValidJSON'
 import sample from './sample'
+import { Form } from '../types'
 
 export default ({
+  form,
+  setForm,
   open,
   onClose
 }: {
+  form: Form
+  setForm: Dispatch<SetStateAction<Form>>
   open: boolean
   onClose: VoidFunction
 }): ReactElement => {
   const [formCode, setFormCode] = useState<string>('')
-  useEffect(() => { setFormCode(sample) }, [])
+
+  useEffect(() => {
+    if (form) {
+      setFormCode(JSON.stringify(form, undefined, 2))
+    } else {
+      setFormCode(sample)
+    }
+  }, [open])
+
   const validJSON = isValidJSON(formCode)
 
 	return (
@@ -67,7 +80,7 @@ export default ({
           color={'primary'}
           variant={'text'}
           onClick={(): void => {
-            window.localStorage.setItem('4-form-id-code-sample', formCode)
+            setForm(JSON.parse(formCode))
             onClose()
           }}
           disabled={!validJSON}
