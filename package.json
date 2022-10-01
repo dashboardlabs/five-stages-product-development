@@ -1,12 +1,13 @@
 {
   "name": "dashlabs",
-  "version": "0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next -p 3000",
-    "build": "next build"
+    "build": "next build",
+    "export": "next export"
   },
   "license": "ISC",
   "dependencies": {
