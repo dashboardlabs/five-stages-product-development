@@ -107,7 +107,7 @@ export default (): ReactElement => {
         {'Passport'}
       </Typography>
       <Typography variant={'body2'} sx={{ mb: 1 }}>
-        {'Passport email'}
+        {'Passport image'}
       </Typography>
       <Box
         sx={{ mb: 3 }}

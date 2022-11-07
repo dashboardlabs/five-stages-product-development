@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import Code from '../Code'
+import entitySx from '../entitySx'
 
 export default (): ReactElement => {
   const [patientFirstName, setPatientFirstName] = useState<string>('')
@@ -34,37 +34,8 @@ export default (): ReactElement => {
   const [travelDestination, setTravelDestination] = useState<string>('')
   const [travelDepartureDate, setTravelDepartureDate] = useState<string>('')
 
-  const body = {
-    patientFirstName,
-    patientLastName,
-    patientBirthday,
-    patientSex,
-    passportImage,
-    passportNumber,
-    passportIssuingCountry,
-    passportExpiryDate,
-    vaccinationRecordCard,
-    vaccinationRecordFirstDose,
-    vaccinationRecordFirstDoseBrand,
-    vaccinationRecordFirstDoseDate,
-    vaccinationRecordSecondDose,
-    vaccinationRecordSecondDoseBrand,
-    vaccinationRecordSecondDoseDate,
-    vaccinationRecordThirdDose,
-    vaccinationRecordThirdDoseBrand,
-    vaccinationRecordThirdDoseDate,
-    vaccinationRecordFourthDose,
-    vaccinationRecordFourthDoseBrand,
-    vaccinationRecordFourthDoseDate,
-    travelDestination,
-    travelDepartureDate
-  }
-
 	return (
 		<>
-			<Code
-				code={body}
-			/>
       <Typography
         variant={'h5'}
         sx={{ mb: 3 }}
@@ -72,6 +43,7 @@ export default (): ReactElement => {
         {'Patient information'}
       </Typography>
       <TextField
+        sx={entitySx}
         label={'First name'}
         value={patientFirstName}
         onChange={(e): void => {
@@ -79,6 +51,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Last name'}
         value={patientLastName}
         onChange={(e): void => {
@@ -86,6 +59,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Birthday'}
         value={patientBirthday}
         onChange={(e): void => {
@@ -93,6 +67,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Sex'}
         value={patientSex}
         onChange={(e): void => {
@@ -106,19 +81,23 @@ export default (): ReactElement => {
       >
         {'Passport'}
       </Typography>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
-        {'Passport image'}
-      </Typography>
       <Box
-        sx={{ mb: 3 }}
-        component={'input'}
-        type={'file'}
-        name={'passportImage'}
-        onChange={(e) => {
-          setPassportImage(e.target.value)
-        }}
-      />
+        sx={entitySx}
+      >
+        <Typography variant={'body2'} sx={{ mb: 1 }}>
+          {'Passport image'}
+        </Typography>
+        <Box
+          component={'input'}
+          type={'file'}
+          name={'passportImage'}
+          onChange={(e) => {
+            setPassportImage(e.target.value)
+          }}
+        />
+      </Box>
       <TextField
+        sx={entitySx}
         label={'Passport number'}
         value={passportNumber}
         onChange={(e): void => {
@@ -126,6 +105,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Issuing country'}
         value={passportIssuingCountry}
         onChange={(e): void => {
@@ -133,6 +113,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Expiry date'}
         value={passportExpiryDate}
         onChange={(e): void => {
@@ -146,19 +127,23 @@ export default (): ReactElement => {
       >
         {'Vaccination record'}
       </Typography>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
-        {'Vaccination card'}
-      </Typography>
       <Box
-        sx={{ mb: 3 }}
-        component={'input'}
-        type={'file'}
-        name={'vaccinationRecordCard'}
-        onChange={(e) => {
-          setVaccinationRecordCard(e.target.value)
-        }}
-      />
+        sx={entitySx}
+      >
+        <Typography variant={'body2'} sx={{ mb: 1 }}>
+          {'Vaccination card'}
+        </Typography>
+        <Box
+          component={'input'}
+          type={'file'}
+          name={'vaccinationRecordCard'}
+          onChange={(e) => {
+            setVaccinationRecordCard(e.target.value)
+          }}
+        />
+      </Box>
       <FormControlLabel
+        sx={entitySx}
         onChange={(): void => {
           setVaccinationRecordFirstDose(!vaccinationRecordFirstDose)
         }}
@@ -166,6 +151,7 @@ export default (): ReactElement => {
         label={'First dose'}
       />
       <TextField
+        sx={entitySx}
         label={'First dose brand'}
         value={vaccinationRecordFirstDoseBrand}
         onChange={(e): void => {
@@ -173,6 +159,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'First dose date'}
         value={vaccinationRecordFirstDoseDate}
         onChange={(e): void => {
@@ -180,6 +167,7 @@ export default (): ReactElement => {
         }}
       />
       <FormControlLabel
+        sx={entitySx}
         onChange={(): void => {
           setVaccinationRecordSecondDose(!vaccinationRecordSecondDose)
         }}
@@ -187,6 +175,7 @@ export default (): ReactElement => {
         label={'Second dose'}
       />
       <TextField
+        sx={entitySx}
         label={'Second dose brand'}
         value={vaccinationRecordSecondDoseBrand}
         onChange={(e): void => {
@@ -194,6 +183,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Second dose date'}
         value={vaccinationRecordSecondDoseDate}
         onChange={(e): void => {
@@ -201,6 +191,7 @@ export default (): ReactElement => {
         }}
       />
       <FormControlLabel
+        sx={entitySx}
         onChange={(): void => {
           setVaccinationRecordThirdDose(!vaccinationRecordThirdDose)
         }}
@@ -208,6 +199,7 @@ export default (): ReactElement => {
         label={'Third dose'}
       />
       <TextField
+        sx={entitySx}
         label={'Third dose brand'}
         value={vaccinationRecordThirdDoseBrand}
         onChange={(e): void => {
@@ -215,6 +207,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Third dose date'}
         value={vaccinationRecordThirdDoseDate}
         onChange={(e): void => {
@@ -222,6 +215,7 @@ export default (): ReactElement => {
         }}
       />
       <FormControlLabel
+        sx={entitySx}
         onChange={(): void => {
           setVaccinationRecordFourthDose(!vaccinationRecordFourthDose)
         }}
@@ -229,6 +223,7 @@ export default (): ReactElement => {
         label={'Fourth dose'}
       />
       <TextField
+        sx={entitySx}
         label={'Fourth dose brand'}
         value={vaccinationRecordFourthDoseBrand}
         onChange={(e): void => {
@@ -236,6 +231,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Fourth dose date'}
         value={vaccinationRecordFourthDoseDate}
         onChange={(e): void => {
@@ -250,6 +246,7 @@ export default (): ReactElement => {
         {'Travel details'}
       </Typography>
       <TextField
+        sx={entitySx}
         label={'Destination'}
         value={travelDestination}
         onChange={(e): void => {
@@ -257,6 +254,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        sx={entitySx}
         label={'Departure date'}
         value={travelDepartureDate}
         onChange={(e): void => {

@@ -24,6 +24,11 @@ const theme: Theme = createTheme({
         }
       }
     },
+    MuiListSubheader: {
+      defaultProps: {
+        color: 'primary'
+      }
+    },
     MuiButton: {
       defaultProps: {
         size: 'small'

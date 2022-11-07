@@ -17,7 +17,7 @@ export default ({
     }}
   >
     <code>
-      {'This is the printed JSON output of this form'}
+      {'This is the printed output of this form'}
       <pre>
         {JSON.stringify(code, null, 2)}
       </pre>
@@ -28,6 +28,6 @@ export default ({
       variant={'outlined'}
       color={'inherit'}
     >
-      {'Print JSON to console'}
+      {'Print to console'}
     </Button>
   </Box>
