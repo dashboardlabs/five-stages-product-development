@@ -16,6 +16,7 @@ export default (): ReactElement =>
     </Typography>
     <Section
       label={'Patient information'}
+      required
     >
       <Entity 
         type={'STRING'}

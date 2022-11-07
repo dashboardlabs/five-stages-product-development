@@ -5,9 +5,11 @@ import Box from '@mui/material/Box'
 
 const Section = ({
   label, 
+  required,
   children
 }: {
   label: string
+  required?: boolean,
   children: ReactElement | ReactElement[]
 }): ReactElement =>
   <Box
@@ -19,9 +21,15 @@ const Section = ({
   >
     <Typography
       variant={'h5'}
-      sx={{ mb: 3 }}
     >
       {label}
+    </Typography>
+    <Typography
+      color={required ? 'error' : null}
+      variant={'overline'}
+      sx={{ mb: 3 }}
+    >
+      {required ? 'REQUIRED: TRUE' : 'REQUIRED: FALSE'}
     </Typography>
     {children}
   </Box>

@@ -16,9 +16,15 @@ export default (): ReactElement =>
     </Typography>
     <Typography
       variant={'h5'}
-      sx={{ mb: 3 }}
     >
       {'Patient information'}
+    </Typography>
+    <Typography
+      color={'error'}
+      variant={'overline'}
+      sx={{ mb: 3 }}
+    >
+      {'Required'}
     </Typography>
     <Entity 
       type={'STRING'}

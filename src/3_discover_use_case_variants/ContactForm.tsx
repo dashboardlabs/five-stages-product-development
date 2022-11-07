@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import Code from '../Code'
+import FormOutput from '../FormOutput'
 
 export default (): ReactElement => {
   const [patientProfilePhoto, setPatientProfilePhoto] = useState<string>('')
@@ -38,7 +38,7 @@ export default (): ReactElement => {
 
 	return (
 		<>
-			<Code
+			<FormOutput
 				code={body}
 			/>
       <Typography

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import Legend from 'src/abstraction_steps/Legend'
 import TravelForm from 'src/abstraction_steps/4_section_parameters/TravelForm'
-import Code1 from 'src/Code1'
+import CodeSnippet from 'src/CodeSnippet'
 
 export default (): ReactElement => {
   return (
@@ -34,8 +34,20 @@ export default (): ReactElement => {
           {'Step 4: Identify section parameters'}
         </Typography>
 			</Breadcrumbs>
-      <Code1
-        value={`const entity = { type: string label: string }\nconst section = { label: string, entities: entity[] }`}
+      <Typography
+        variant={'body1'}
+        sx={{ marginBottom: 3 }}
+      >
+        {'Identify section parameters. Section parameters are customizations applied to a set of entities.'}
+      </Typography>
+      <Typography
+        variant={'body1'}
+        sx={{ marginBottom: 3 }}
+      >
+        {'In this form, we identify "REQUIRED" as a section parameter.'}
+      </Typography>
+      <CodeSnippet
+        value={`const entity = { type: string label: string }\nconst section = { label: string, required: boolean, entities: entity[] }`}
       />
       <Legend />
       <TravelForm />

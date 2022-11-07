@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import Legend from 'src/abstraction_steps/Legend'
 import TravelForm from 'src/abstraction_steps/2_entity_types/TravelForm'
-import Code1 from 'src/Code1'
+import CodeSnippet from 'src/CodeSnippet'
 
 export default (): ReactElement => {
   return (
@@ -46,7 +46,7 @@ export default (): ReactElement => {
       >
         {'In this form, we wrote down the types.'}
       </Typography>
-      <Code1
+      <CodeSnippet
         value={`const entity = { \n type: string \n label: string \n}`}
       />
       <Legend />

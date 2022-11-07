@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import Legend from 'src/abstraction_steps/Legend'
 import TravelForm from 'src/abstraction_steps/3_sections/TravelForm'
-import Code1 from 'src/Code1'
+import CodeSnippet from 'src/CodeSnippet'
 
 export default (): ReactElement => {
   return (

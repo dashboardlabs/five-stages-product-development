@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import Code from '../Code'
+import FormOutput from '../FormOutput'
 
 import { Form, Section, Field, Values } from './types'
 
@@ -36,7 +36,7 @@ export default ({
 
 	return (
 		<>
-			<Code
+			<FormOutput
 				code={values}
 			/>
       <Typography

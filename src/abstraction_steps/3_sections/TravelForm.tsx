@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 
+import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 import Entity from '../Entity'
-import Section from '../Section'
 
 export default (): ReactElement =>
   <>
@@ -14,9 +14,25 @@ export default (): ReactElement =>
     >
       {'Travel form'}
     </Typography>
-    <Section
-      label={'Patient information'}
+    <Box
+      sx={{
+        border: '2px solid blue',
+        marginBottom: 3,
+        padding: 1
+      }}
     >
+      <Typography
+        variant={'h5'}
+      >
+        {'Patient information'}
+      </Typography>
+      <Typography
+        color={'error'}
+        variant={'overline'}
+        sx={{ mb: 3 }}
+      >
+        {'Required'}
+      </Typography>
       <Entity 
         type={'STRING'}
         label={'First name'}
@@ -33,10 +49,20 @@ export default (): ReactElement =>
         type={'STRING'}
         label={'Sex'}
       />
-    </Section>
-    <Section
-      label={'Passport'}
+    </Box>
+    <Box
+      sx={{
+        border: '2px solid blue',
+        marginBottom: 3,
+        padding: 1
+      }}
     >
+      <Typography
+        variant={'h5'}
+        sx={{ mb: 3 }}
+      >
+        {'Passport'}
+      </Typography>
       <Entity 
         type={'FILE'}
         label={'Passport image'}
@@ -53,10 +79,20 @@ export default (): ReactElement =>
         type={'STRING'}
         label={'Expiry date'}
       />
-    </Section>
-    <Section
-      label={'Vaccination record'}
+    </Box>
+    <Box
+      sx={{
+        border: '2px solid blue',
+        marginBottom: 3,
+        padding: 1
+      }}
     >
+      <Typography
+        variant={'h5'}
+        sx={{ mb: 3 }}
+      >
+        {'Vaccination record'}
+      </Typography>
       <Entity 
         type={'FILE'}
         label={'Vaccination card'}
@@ -109,10 +145,20 @@ export default (): ReactElement =>
         type={'STRING'}
         label={'Fourth dose date'}
       />
-    </Section>
-    <Section
-      label={'Travel details'}
+    </Box>
+    <Box
+      sx={{
+        border: '2px solid blue',
+        marginBottom: 3,
+        padding: 1
+      }}
     >
+      <Typography
+        variant={'h5'}
+        sx={{ mb: 3 }}
+      >
+        {'Travel details'}
+      </Typography>
       <Entity 
         type={'STRING'}
         label={'Destination'}
@@ -121,5 +167,5 @@ export default (): ReactElement =>
         type={'STRING'}
         label={'Departure date'}
       />
-    </Section>
+    </Box>
   </>

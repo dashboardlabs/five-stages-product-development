@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import Code from '../Code'
+import FormOutput from '../FormOutput'
 
 export default (): ReactElement => {
   const [yourValue, setYourValue] = useState<string>('')
@@ -15,7 +15,7 @@ export default (): ReactElement => {
 
 	return (
 		<>
-			<Code
+			<FormOutput
 				code={body}
 			/>
       <Typography

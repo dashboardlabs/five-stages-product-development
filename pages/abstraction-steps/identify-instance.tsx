@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import Legend from 'src/abstraction_steps/Legend'
 import TravelForm from 'src/abstraction_steps/5_instance/FormComponent'
-import Code1 from 'src/Code1'
+import CodeSnippet from 'src/CodeSnippet'
 
 export default (): ReactElement =>
   <Container
@@ -45,8 +45,8 @@ export default (): ReactElement =>
     >
       {'In this form, we outlined the instance in green.'}
     </Typography>
-    <Code1
-      value={`const entity = { type: string label: string }\nconst section = { label: string, entities: entity[] }\nconst instance ={ name: string, sections: section[] }`}
+    <CodeSnippet
+      value={`const entity = { type: string label: string }\nconst section = { label: string, required: boolean, entities: entity[] }\nconst instance = { name: string, sections: section[] }`}
     />
     <Legend />
     <TravelForm />
