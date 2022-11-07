@@ -7,6 +7,7 @@ export interface Form {
 export interface Section {
 	name: string
 	fields: Field[]
+	required?: boolean
 }
 
 export interface Field {

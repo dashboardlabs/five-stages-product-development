@@ -3,6 +3,7 @@ export default `{
   "name": "User generated form",
   "sections": [{
     "name": "Section",
+    "required": true,
     "fields": [{
       "id": "FILE",
       "name": "File upload",

@@ -74,11 +74,18 @@ export default (): ReactElement => {
       </Typography>
       <Typography
         variant={'h5'}
-        sx={{ mb: 3 }}
       >
         {'Patient information'}
       </Typography>
+      <Typography
+        color={'error'}
+        variant={'overline'}
+        sx={{ mb: 3 }}
+      >
+        {'Required'}
+      </Typography>
       <TextField
+        required
         label={'First name'}
         value={patientFirstName}
         onChange={(e): void => {
@@ -86,6 +93,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        required
         label={'Last name'}
         value={patientLastName}
         onChange={(e): void => {
@@ -93,6 +101,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        required
         label={'Birthday'}
         value={patientBirthday}
         onChange={(e): void => {
@@ -100,6 +109,7 @@ export default (): ReactElement => {
         }}
       />
       <TextField
+        required
         label={'Sex'}
         value={patientSex}
         onChange={(e): void => {

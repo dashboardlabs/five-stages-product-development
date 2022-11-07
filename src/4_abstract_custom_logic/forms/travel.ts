@@ -5,6 +5,7 @@ export default {
   name: 'Travel form',
   sections: [{
     name: 'Patient information',
+    required: true,
     fields: [{
       id: 'PATIENT_FIRST_NAME',
       name: 'First name',

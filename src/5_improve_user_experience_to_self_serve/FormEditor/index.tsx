@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField'
 
 import SectionEditor from './SectionEditor'
 
-import {  Form, Section } from '../types'
+import { Form, Section } from '../types'
 
 export default ({
   form,

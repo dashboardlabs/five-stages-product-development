@@ -1,8 +1,10 @@
 import React, { ReactElement, useState } from 'react'
 
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import ButtonGroup from '@mui/material/ButtonGroup'
-import Box from '@mui/material/Box'
+import Checkbox from '@mui/material/Checkbox'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 
 import { Field, Section } from '../types'
@@ -35,6 +37,16 @@ export default ({
             name: e.target.value
           })
         }}
+      />
+      <FormControlLabel
+        onChange={(): void => {
+          onChange({
+            ...section,
+            required: !section.required
+          })
+        }}
+        control={<Checkbox checked={section.required} />}
+        label={'Require all fields in this section'}
       />
       {section.fields?.map((field: Field, fieldIndex: number): ReactElement => 
         <Box
