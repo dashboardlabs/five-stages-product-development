@@ -44,7 +44,7 @@ export default ({
         color={'primary'}
         sx={{ mb: 3 }}
       >
-        {form.name}
+        {form?.name}
       </Typography>
 			{form?.sections.map((section: Section, sectionIndex: number): ReactElement =>
 				<Box

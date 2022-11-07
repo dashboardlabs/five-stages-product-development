@@ -35,26 +35,38 @@ export default (): ReactElement =>
     >
       {'Required'}
     </Typography>
-    <TextField
+    <Box
       sx={entitySx}
-      required
-      label={'First name'}
-    />
-    <TextField
+    >
+      <TextField
+        required
+        label={'First name'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      required
-      label={'Last name'}
-    />
-    <TextField
+    >
+      <TextField
+        required
+        label={'Last name'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      required
-      label={'Birthday'}
-    />
-    <TextField
-      required
+    >
+      <TextField
+        required
+        label={'Birthday'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Sex'}
-    />
+    >
+      <TextField
+        required
+        label={'Sex'}
+      />
+    </Box>
     <Box sx={{ mb: 2 }} />
     <Typography
       variant={'h5'}
@@ -74,18 +86,27 @@ export default (): ReactElement =>
         name={'passportImage'}
       />
     </Box>
-    <TextField
+    <Box
       sx={entitySx}
-      label={'Passport number'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Passport number'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Issuing country'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Issuing country'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Expiry date'}
-    />
+    >
+      <TextField
+        label={'Expiry date'}
+      />
+    </Box>
     <Box sx={{ mb: 2 }} />
     <Typography
       variant={'h5'}
@@ -105,58 +126,94 @@ export default (): ReactElement =>
         name={'vaccinationRecordCard'}
       />
     </Box>
-    <FormControlLabel
+    <Box
       sx={entitySx}
-      control={<Checkbox />}
-      label={'First dose'}
-    />
-    <TextField
+    >
+      <FormControlLabel
+        control={<Checkbox />}
+        label={'First dose'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'First dose brand'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'First dose brand'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'First dose date'}
-    />
-    <FormControlLabel
+    >
+      <TextField
+        label={'First dose date'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      control={<Checkbox />}
-      label={'Second dose'}
-    />
-    <TextField
+    >
+      <FormControlLabel
+        control={<Checkbox />}
+        label={'Second dose'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Second dose brand'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Second dose brand'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Second dose date'}
-    />
-    <FormControlLabel
+    >
+      <TextField
+        label={'Second dose date'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      control={<Checkbox />}
-      label={'Third dose'}
-    />
-    <TextField
+    >
+      <FormControlLabel
+        control={<Checkbox />}
+        label={'Third dose'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Third dose brand'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Third dose brand'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Third dose date'}
-    />
-    <FormControlLabel
+    >
+      <TextField
+        label={'Third dose date'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      control={<Checkbox />}
-      label={'Fourth dose'}
-    />
-    <TextField
+    >
+      <FormControlLabel
+        control={<Checkbox />}
+        label={'Fourth dose'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Fourth dose brand'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Fourth dose brand'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Fourth dose date'}
-    />
+    >
+      <TextField
+        label={'Fourth dose date'}
+      />
+    </Box>
     <Box sx={{ mb: 2 }} />
     <Typography
       variant={'h5'}
@@ -164,12 +221,18 @@ export default (): ReactElement =>
     >
       {'Travel details'}
     </Typography>
-    <TextField
+    <Box
       sx={entitySx}
-      label={'Destination'}
-    />
-    <TextField
+    >
+      <TextField
+        label={'Destination'}
+      />
+    </Box>
+    <Box
       sx={entitySx}
-      label={'Departure date'}
-    />
+    >
+      <TextField
+        label={'Departure date'}
+      />
+    </Box>
   </>
