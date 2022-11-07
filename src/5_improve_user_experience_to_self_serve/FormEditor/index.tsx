@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
+import TextField from '@mui/material/TextField'
 
 import SectionEditor from './SectionEditor'
 
@@ -36,6 +37,17 @@ export default ({
         {'Form editor'}
       </DialogTitle>
       <DialogContent>
+        <TextField
+          sx={{ marginTop: 1, marginBottom: 1 }}
+          label={'Form'}
+          value={form.name}
+          onChange={(e): void => {
+            setForm((previousForm: Form) => ({
+              ...previousForm,
+              name: e.target.value
+            }))
+          }}
+        />
         <Tabs
           variant={'scrollable'}
           value={selectedSectionIndex}

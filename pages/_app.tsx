@@ -9,18 +9,17 @@ const theme: Theme = createTheme({
   components: {
     MuiTextField: {
       defaultProps: {
-        fullWidth: true,
         size: 'small',
-        sx: {
-          mb: 1
-        }
+        fullWidth: true,
+        margin: 'dense',
       }
     },
     MuiFormControlLabel: {
       defaultProps: {
         sx: {
           display: 'block',
-          mb: 1
+          marginLeft: 0,
+          marginBottom: 1
         }
       }
     },
@@ -38,7 +37,7 @@ const theme: Theme = createTheme({
       defaultProps: {
         variant: 'fullWidth',
         sx: {
-          mb: 3
+          marginBottom: 3
         }
       }
     }

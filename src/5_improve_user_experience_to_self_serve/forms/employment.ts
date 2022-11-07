@@ -2,7 +2,7 @@ import { Form } from '../types'
 
 export default {
   id: 'employment',
-  name: 'Employment',
+  name: 'Employment form',
   sections: [{
     name: 'Patient information',
     fields: [{

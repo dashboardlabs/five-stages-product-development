@@ -42,6 +42,13 @@ export default (): ReactElement => {
 				code={body}
 			/>
       <Typography
+        variant={'h4'}
+        color={'primary'}
+        sx={{ mb: 3 }}
+      >
+        {'Contact form'}
+      </Typography>
+      <Typography
         variant={'h5'}
         sx={{ mb: 3 }}
       >

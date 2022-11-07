@@ -39,6 +39,13 @@ export default ({
 			<Code
 				code={values}
 			/>
+      <Typography
+        variant={'h4'}
+        color={'primary'}
+        sx={{ mb: 3 }}
+      >
+        {form?.name}
+      </Typography>
 			{form?.sections.map((section: Section, sectionIndex: number): ReactElement =>
 				<Box
 					key={sectionIndex}
