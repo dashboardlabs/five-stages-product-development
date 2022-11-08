@@ -49,7 +49,9 @@ export default (): ReactElement => {
       <CodeSnippet
         value={`const entity = { \n type: string \n label: string \n}`}
       />
-      <Legend />
+      <Legend
+        entity
+      />
       <TravelForm />
     </Container>
   )

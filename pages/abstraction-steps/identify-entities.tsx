@@ -44,6 +44,8 @@ export default (): ReactElement =>
     >
       {'In this form, we outlined the entities in red.'}
     </Typography>
-    <Legend />
+    <Legend
+      entity
+    />
     <TravelForm />
   </Container>

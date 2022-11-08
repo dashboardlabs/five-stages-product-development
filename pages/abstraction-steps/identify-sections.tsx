@@ -45,7 +45,10 @@ export default (): ReactElement => {
       >
         {'In this form, we outlined the sections in blue.'}
       </Typography>
-      <Legend />
+      <Legend
+        entity
+        section
+      />
       <TravelForm />
     </Container>
   )
