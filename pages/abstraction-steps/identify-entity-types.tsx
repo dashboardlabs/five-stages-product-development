@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import NextLink from 'next/link'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs'
+import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
@@ -53,6 +54,17 @@ export default (): ReactElement => {
         entity
       />
       <TravelForm />
+      <NextLink
+        href={'/abstraction-steps/identify-sections'}
+        passHref
+      >
+        <Button
+          variant={'outlined'}
+          fullWidth
+        >
+          {'Next step'}
+        </Button>
+      </NextLink>
     </Container>
   )
 }

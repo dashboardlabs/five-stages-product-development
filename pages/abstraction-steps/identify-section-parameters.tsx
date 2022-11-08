@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import NextLink from 'next/link'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs'
+import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
@@ -47,13 +48,33 @@ export default (): ReactElement => {
         {'In this form, we identify "REQUIRED" as a section parameter.'}
       </Typography>
       <CodeSnippet
-        value={`const entity = { type: string label: string }\nconst section = { label: string, required: boolean, entities: entity[] }`}
+        value={`const section = {
+  label: string,
+  required: boolean,
+  entities: entity[]
+}
+
+const entity = {
+  type: string,
+  label: string
+}`}
       />
       <Legend
         entity
         section
       />
       <TravelForm />
+      <NextLink
+        href={'/abstraction-steps/identify-instance'}
+        passHref
+      >
+        <Button
+          variant={'outlined'}
+          fullWidth
+        >
+          {'Next step'}
+        </Button>
+      </NextLink>
     </Container>
   )
 }

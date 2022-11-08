@@ -46,7 +46,21 @@ export default (): ReactElement =>
       {'In this form, we outlined the instance in green.'}
     </Typography>
     <CodeSnippet
-      value={`const entity = { type: string label: string }\nconst section = { label: string, required: boolean, entities: entity[] }\nconst instance = { name: string, sections: section[] }`}
+      value={`const instance = {
+  name: string,
+  sections: section[]
+}
+
+const section = {
+  label: string,
+  required: boolean,
+  entities: entity[]
+}
+
+const entity = {
+  type: string,
+  label: string
+}`}
     />
     <Legend
       entity
