@@ -6,7 +6,7 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-import TravelForm from '../../src/product-development-stages/2_single_use_case_feature/TravelForm'
+import TravelForm from 'src/productDevelopmentStages/2_single_use_case_feature/TravelForm'
 
 export default (): ReactElement =>
   <Container

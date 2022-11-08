@@ -8,10 +8,10 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-import { Form } from '../../src/product-development-stages/5_improve_user_experience_to_self_serve/types'
-import FormComponent from '../../src/product-development-stages/5_improve_user_experience_to_self_serve/FormComponent'
-import FormEditor from '../../src/product-development-stages/5_improve_user_experience_to_self_serve/FormEditor'
-import forms from '../../src/product-development-stages/5_improve_user_experience_to_self_serve/forms'
+import { Form } from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/types'
+import FormComponent from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/FormComponent'
+import FormEditor from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/FormEditor'
+import forms from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/forms'
 
 export default (): ReactElement => {
   const [form, setForm] = useState<Form>({

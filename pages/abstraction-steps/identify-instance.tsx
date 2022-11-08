@@ -6,9 +6,9 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-import Legend from 'src/abstraction_steps/Legend'
-import TravelForm from 'src/abstraction_steps/5_instance/FormComponent'
-import CodeSnippet from 'src/abstraction_steps/CodeSnippet'
+import Legend from 'src/abstractionSteps/Legend'
+import TravelForm from 'src/abstractionSteps/5_instance/FormComponent'
+import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 
 export default (): ReactElement =>
   <Container

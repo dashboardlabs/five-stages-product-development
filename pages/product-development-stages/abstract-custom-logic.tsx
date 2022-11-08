@@ -9,10 +9,10 @@ import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 
-import { Form } from '../../src/product-development-stages/4_abstract_custom_logic/types'
-import FormComponent from '../../src/product-development-stages/4_abstract_custom_logic/FormComponent'
-import FormEditor from '../../src/product-development-stages/4_abstract_custom_logic/FormEditor'
-import forms from '../../src/product-development-stages/4_abstract_custom_logic/forms'
+import { Form } from 'src/productDevelopmentStages/4_abstract_custom_logic/types'
+import FormComponent from 'src/productDevelopmentStages/4_abstract_custom_logic/FormComponent'
+import FormEditor from 'src/productDevelopmentStages/4_abstract_custom_logic/FormEditor'
+import forms from 'src/productDevelopmentStages/4_abstract_custom_logic/forms'
 
 const pageId = '4-form-id'
 
