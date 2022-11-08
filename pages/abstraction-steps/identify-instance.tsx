@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import Legend from 'src/abstraction_steps/Legend'
 import TravelForm from 'src/abstraction_steps/5_instance/FormComponent'
-import CodeSnippet from 'src/CodeSnippet'
+import CodeSnippet from 'src/abstraction_steps/CodeSnippet'
 
 export default (): ReactElement =>
   <Container

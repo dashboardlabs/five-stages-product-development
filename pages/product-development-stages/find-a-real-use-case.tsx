@@ -6,8 +6,6 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-import TravelForm from '../src/2_single_use_case_feature/TravelForm'
-
 export default (): ReactElement =>
   <Container
     maxWidth={'sm'}
@@ -29,8 +27,12 @@ export default (): ReactElement =>
       <Typography
         color={'text.primary'}
       >
-        {'2. Single use-case feature'}
+        {'1. Find a real use-case'}
       </Typography>
     </Breadcrumbs>
-    <TravelForm />
+    <Typography
+        color={'text.primary'}
+      >
+      {'Code should not be written at this stage. Engineers should talk to users and understand their problems.'}
+    </Typography>
   </Container>

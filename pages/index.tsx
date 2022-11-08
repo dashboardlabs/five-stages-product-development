@@ -17,19 +17,19 @@ interface PageNavigationRoute {
 
 const routes = [{
   primary: '1. Find a real use-case',
-  href: '/find-a-real-use-case'
+  href: '/product-development-stages/find-a-real-use-case'
 }, {
   primary: '2. Single use-case feature',
-  href: '/single-use-case-feature'
+  href: '/product-development-stages/single-use-case-feature'
 }, {
   primary: '3. Discover use-case variants',
-  href: '/discover-use-case-variants'
+  href: '/product-development-stages/discover-use-case-variants'
 }, {
   primary: '4. Abstract custom logic',
-  href: '/abstract-custom-logic'
+  href: '/product-development-stages/abstract-custom-logic'
 }, {
   primary: '5. Improve user experience to self-serve',
-  href: '/improve-user-experience-to-self-serve'
+  href: '/product-development-stages/improve-user-experience-to-self-serve'
 }]
 
 const howToRoutes = [{

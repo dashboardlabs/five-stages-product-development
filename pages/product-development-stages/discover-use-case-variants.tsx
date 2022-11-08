@@ -8,10 +8,10 @@ import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 
-import ContactForm from '../src/3_discover_use_case_variants/ContactForm'
-import EmploymentForm from '../src/3_discover_use_case_variants/EmploymentForm'
-import TravelForm from '../src/3_discover_use_case_variants/TravelForm'
-import YourForm from '../src/3_discover_use_case_variants/EDIT_HERE'
+import ContactForm from '../../src/product-development-stages/3_discover_use_case_variants/ContactForm'
+import EmploymentForm from '../../src/product-development-stages/3_discover_use_case_variants/EmploymentForm'
+import TravelForm from '../../src/product-development-stages/3_discover_use_case_variants/TravelForm'
+import YourForm from '../../src/product-development-stages/3_discover_use_case_variants/EDIT_HERE'
 
 const pageId = '3-form-id'
 
