@@ -16,49 +16,38 @@ interface PageNavigationRoute {
 }
 
 const routes = [{
-  primary: 'Find a real use-case',
-  secondary: 'Step 1',
+  primary: '1. Find a real use-case',
   href: '/find-a-real-use-case'
 }, {
-  primary: 'Single use-case feature',
-  secondary: 'Step 2',
+  primary: '2. Single use-case feature',
   href: '/single-use-case-feature'
 }, {
-  primary: 'Discover use-case variants',
-  secondary: 'Step 3',
+  primary: '3. Discover use-case variants',
   href: '/discover-use-case-variants'
 }, {
-  primary: 'Abstract custom logic',
-  secondary: 'Step 4',
+  primary: '4. Abstract custom logic',
   href: '/abstract-custom-logic'
 }, {
-  primary: 'Improve user experience to self-serve',
-  secondary: 'Step 5',
+  primary: '5. Improve user experience to self-serve',
   href: '/improve-user-experience-to-self-serve'
 }]
 
 const howToRoutes = [{
-  primary: 'Identify entities',
-  secondary: 'Step 1',
+  primary: '1. Identify entities',
   href: '/abstraction-steps/identify-entities'
 }, {
-  primary: 'Identify entity types',
-  secondary: 'Step 2',
+  primary: '2. Identify entity types',
   href: '/abstraction-steps/identify-entity-types'
 }, {
-  primary: 'Identify sections',
-  secondary: 'Step 3',
+  primary: '3. Identify sections',
   href: '/abstraction-steps/identify-sections'
 }, {
-  primary: 'Identify section parameters',
-  secondary: 'Step 4',
+  primary: '4. Identify section parameters',
   href: '/abstraction-steps/identify-section-parameters'
 }, {
-  primary: 'Identify instance',
-  secondary: 'Step 5',
+  primary: '5. Identify instance',
   href: '/abstraction-steps/identify-instance'
 }]
-
 
 export default (): ReactElement =>
   <Container>
@@ -73,7 +62,7 @@ export default (): ReactElement =>
       {routes.map((route: PageNavigationRoute, index: number): ReactElement => (
         <NextLink key={index} href={route.href} passHref>
           <ListItem button component={MuiLink}>
-            <ListItemText primary={route.primary} secondary={route.secondary} />
+            <ListItemText primary={route.primary} />
           </ListItem>
         </NextLink>
       ))}
@@ -88,7 +77,7 @@ export default (): ReactElement =>
       {howToRoutes.map((route: PageNavigationRoute, index: number): ReactElement => (
         <NextLink key={index} href={route.href} passHref>
           <ListItem button component={MuiLink}>
-            <ListItemText primary={route.primary} secondary={route.secondary} />
+            <ListItemText primary={route.primary} />
           </ListItem>
         </NextLink>
       ))}

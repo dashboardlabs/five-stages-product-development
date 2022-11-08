@@ -31,7 +31,7 @@ export default (): ReactElement => {
 				<Typography
           color={'text.primary'}
         >
-          {'Step 2: Identify entity types'}
+          {'2. Identify entity types'}
         </Typography>
 			</Breadcrumbs>
       <Typography

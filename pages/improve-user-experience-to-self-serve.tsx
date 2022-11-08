@@ -42,7 +42,7 @@ export default (): ReactElement => {
 				<Typography
           color={'text.primary'}
         >
-          {'Step 5: Improve user experience to self-serve'}
+          {'5. Improve user experience to self-serve'}
         </Typography>
 			</Breadcrumbs>
       <Button

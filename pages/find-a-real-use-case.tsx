@@ -27,7 +27,7 @@ export default (): ReactElement =>
       <Typography
         color={'text.primary'}
       >
-        {'Step 1: Find a real use-case'}
+        {'1. Find a real use-case'}
       </Typography>
     </Breadcrumbs>
     {'No code yet'}

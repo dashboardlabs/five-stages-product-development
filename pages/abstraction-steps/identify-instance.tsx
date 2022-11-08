@@ -30,7 +30,7 @@ export default (): ReactElement =>
       <Typography
         color={'text.primary'}
       >
-        {'Step 5: Identify instance'}
+        {'5. Identify instance'}
       </Typography>
     </Breadcrumbs>
     <Typography

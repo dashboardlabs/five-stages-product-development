@@ -29,7 +29,7 @@ export default (): ReactElement =>
       <Typography
         color={'text.primary'}
       >
-        {'Step 2: Single use-case feature'}
+        {'2. Single use-case feature'}
       </Typography>
     </Breadcrumbs>
     <TravelForm />

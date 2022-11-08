@@ -29,7 +29,7 @@ export default (): ReactElement =>
       <Typography
         color={'text.primary'}
       >
-        {'Step 1: Identify entities'}
+        {'1. Identify entities'}
       </Typography>
     </Breadcrumbs>
     <Typography

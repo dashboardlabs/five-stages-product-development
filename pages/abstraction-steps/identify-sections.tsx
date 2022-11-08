@@ -31,7 +31,7 @@ export default (): ReactElement => {
 				<Typography
           color={'text.primary'}
         >
-          {'Step 3: Identify sections'}
+          {'3. Identify sections'}
         </Typography>
 			</Breadcrumbs>
       <Typography

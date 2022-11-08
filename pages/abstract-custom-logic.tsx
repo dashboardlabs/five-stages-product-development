@@ -61,7 +61,7 @@ export default (): ReactElement => {
 				<Typography
           color={'text.primary'}
         >
-          {'Step 4: Abstract custom logic'}
+          {'4. Abstract custom logic'}
         </Typography>
 			</Breadcrumbs>
       <Tabs

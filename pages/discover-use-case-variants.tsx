@@ -51,7 +51,7 @@ export default (): ReactElement => {
 				<Typography
           color={'text.primary'}
         >
-          {'Step 3: Discover use-case variants'}
+          {'3. Discover use-case variants'}
         </Typography>
 			</Breadcrumbs>
       <Tabs
