@@ -7,7 +7,7 @@ const travel: Instance = {
     {
       name: 'Patient information',
       required: true,
-      fields: [
+      entities: [
         {
           id: 'PATIENT_FIRST_NAME',
           name: 'First name',
@@ -32,7 +32,7 @@ const travel: Instance = {
     },
     {
       name: 'Passport',
-      fields: [
+      entities: [
         {
           id: 'PASSPORT_IMAGE',
           name: 'Passport image',
@@ -57,7 +57,7 @@ const travel: Instance = {
     },
     {
       name: 'Vaccination record',
-      fields: [
+      entities: [
         {
           id: 'VACCINATION_RECORD_CARD',
           name: 'Vaccination card',
@@ -127,7 +127,7 @@ const travel: Instance = {
     },
     {
       name: 'Travel details',
-      fields: [
+      entities: [
         {
           id: 'TRAVEL_DESTINATION',
           name: 'Destination',

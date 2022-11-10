@@ -6,7 +6,7 @@ const contact: Instance = {
   sections: [
     {
       name: 'Patient information',
-      fields: [
+      entities: [
         {
           id: 'PATIENT_PROFILE_PHOTO',
           name: 'Profile photo',
@@ -46,7 +46,7 @@ const contact: Instance = {
     },
     {
       name: 'Contact - email',
-      fields: [
+      entities: [
         {
           id: 'CONTACT_EMAIL',
           name: 'Email',
@@ -61,7 +61,7 @@ const contact: Instance = {
     },
     {
       name: 'Contact - phone',
-      fields: [
+      entities: [
         {
           id: 'CONTACT_PHONE',
           name: 'Phone',

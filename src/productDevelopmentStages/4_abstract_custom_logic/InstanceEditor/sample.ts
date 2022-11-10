@@ -4,7 +4,7 @@ const sample = `{
   "sections": [{
     "name": "Section",
     "required": true,
-    "fields": [{
+    "entities": [{
       "id": "FILE",
       "name": "File upload",
       "type": "FILE"

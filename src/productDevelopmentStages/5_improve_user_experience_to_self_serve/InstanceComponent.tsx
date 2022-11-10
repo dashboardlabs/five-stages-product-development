@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 
 import InstanceOutput from '../InstanceOutput'
 
-import { Instance, Section, Field, Values } from './types'
+import { Instance, Section, Entity, Values } from './types'
 
 // Passing a JSON into this object generates the instance for you
 
@@ -19,12 +19,12 @@ const InstanceComponent = ({ instance }: { instance: Instance }): ReactElement =
   useEffect(() => {
     const newValues = {}
     instance?.sections.forEach((section: Section) => {
-      section.fields.forEach((field: Field) => {
-        if (field.type === 'BOOLEAN') {
-          newValues[field.id] = false
+      section.entities.forEach((entity: Entity) => {
+        if (entity.type === 'BOOLEAN') {
+          newValues[entity.id] = false
           return
         }
-        newValues[field.id] = ''
+        newValues[entity.id] = ''
       })
     })
     setValues(newValues)
@@ -47,52 +47,52 @@ const InstanceComponent = ({ instance }: { instance: Instance }): ReactElement =
                 {'Required'}
               </Typography>
             )}
-            {section.fields.map(
-              (field: Field, fieldIndex: number): ReactElement => (
-                <React.Fragment key={fieldIndex}>
-                  {field.type === 'FILE' && (
+            {section.entities.map(
+              (entity: Entity, entityIndex: number): ReactElement => (
+                <React.Fragment key={entityIndex}>
+                  {entity.type === 'FILE' && (
                     <>
                       <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
-                        {`${field.name}${section.required ? ' (Required)' : ''}`}
+                        {`${entity.name}${section.required ? ' (Required)' : ''}`}
                       </Typography>
                       <Box
                         sx={{ marginBottom: 3 }}
                         component={'input'}
                         type={'file'}
-                        id={field.id}
-                        name={field.id}
+                        id={entity.id}
+                        name={entity.id}
                         onChange={(e) => {
                           setValues((oldValues: Values): Values => {
                             const newValues: Values = Object.assign({}, oldValues)
-                            newValues[field.id] = e.target.value
+                            newValues[entity.id] = e.target.value
                             return newValues
                           })
                         }}
                       />
                     </>
                   )}
-                  {field.type === 'BOOLEAN' && (
+                  {entity.type === 'BOOLEAN' && (
                     <FormControlLabel
                       onChange={(): void => {
                         setValues((oldValues: Values): Values => {
                           const newValues: Values = Object.assign({}, oldValues)
-                          newValues[field.id] = Boolean(values[field.id] !== 'true').toString()
+                          newValues[entity.id] = Boolean(values[entity.id] !== 'true').toString()
                           return newValues
                         })
                       }}
-                      control={<Checkbox checked={values[field.id] === 'true'} required={section.required} />}
-                      label={`${field.name}${section.required ? ' (Required)' : ''}`}
+                      control={<Checkbox checked={values[entity.id] === 'true'} required={section.required} />}
+                      label={`${entity.name}${section.required ? ' (Required)' : ''}`}
                     />
                   )}
-                  {field.type === 'STRING' && (
+                  {entity.type === 'STRING' && (
                     <TextField
                       required={section.required}
-                      label={field.name}
-                      value={values[field.id] || ''}
+                      label={entity.name}
+                      value={values[entity.id] || ''}
                       onChange={(e): void => {
                         setValues((oldValues: Values): Values => {
                           const newValues: Values = Object.assign({}, oldValues)
-                          newValues[field.id] = e.target.value
+                          newValues[entity.id] = e.target.value
                           return newValues
                         })
                       }}

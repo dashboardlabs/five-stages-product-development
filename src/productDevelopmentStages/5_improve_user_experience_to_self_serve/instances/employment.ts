@@ -6,7 +6,7 @@ const employment: Instance = {
   sections: [
     {
       name: 'Patient information',
-      fields: [
+      entities: [
         {
           id: 'PATIENT_FIRST_NAME',
           name: 'First name',
@@ -36,7 +36,7 @@ const employment: Instance = {
     },
     {
       name: 'Employment',
-      fields: [
+      entities: [
         {
           id: 'EMPLOYMENT_EMPLOYED',
           name: 'I am currently employed',
@@ -66,7 +66,7 @@ const employment: Instance = {
     },
     {
       name: 'Laboratory services',
-      fields: [
+      entities: [
         {
           id: 'LABORATORY_SERVICES_CBC',
           name: 'Complete blood count (CBC)',

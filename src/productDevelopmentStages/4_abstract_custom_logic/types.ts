@@ -6,16 +6,16 @@ export interface Instance {
 
 export interface Section {
   name: string
-  fields: Field[]
+  entities: Entity[]
   required?: boolean
 }
 
-export interface Field {
+export interface Entity {
   id: string
   name: string
   type: 'BOOLEAN' | 'STRING' | 'FILE'
 }
 
 export interface Values {
-  [fieldId: string]: string
+  [entityId: string]: string
 }

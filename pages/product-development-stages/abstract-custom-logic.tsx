@@ -17,7 +17,18 @@ const AbstractCustomLogic = (): ReactElement => {
   const [instance, setInstance] = useState<Instance>({
     id: 'userGenerated',
     name: 'User generated',
-    sections: []
+    sections: [
+      {
+        name: 'Section',
+        entities: [
+          {
+            id: 'ENTITY_ID',
+            name: 'Name',
+            type: 'STRING'
+          }
+        ]
+      }
+    ]
   })
 
   const [editorOpen, setEditorOpen] = useState<boolean>(false)
@@ -64,7 +75,18 @@ const AbstractCustomLogic = (): ReactElement => {
             setInstance({
               id: 'userGenerated',
               name: 'User generated',
-              sections: []
+              sections: [
+                {
+                  name: 'Section',
+                  entities: [
+                    {
+                      id: 'ENTITY_ID',
+                      name: 'Name',
+                      type: 'STRING'
+                    }
+                  ]
+                }
+              ]
             })
           }}
         >

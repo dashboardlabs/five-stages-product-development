@@ -60,7 +60,7 @@ const InstanceEditor = ({
                 const newInstance: Instance = Object.assign({}, oldInstance)
                 newInstance.sections.push({
                   name: `Section ${instance.sections?.length + 1}`,
-                  fields: []
+                  entities: []
                 })
 
                 return newInstance

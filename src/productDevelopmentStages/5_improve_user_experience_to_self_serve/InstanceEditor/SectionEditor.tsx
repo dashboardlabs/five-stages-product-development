@@ -7,9 +7,9 @@ import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 
-import { Field, Section } from '../types'
+import { Entity, Section } from '../types'
 
-const fieldTypes: string[] = ['BOOLEAN', 'STRING', 'FILE']
+const entityTypes: string[] = ['BOOLEAN', 'STRING', 'FILE']
 
 const SectionEditor = ({
   section,
@@ -23,7 +23,7 @@ const SectionEditor = ({
   }
 
   const oldSection: Section = Object.assign({}, section)
-  const oldFields: Field[] = oldSection.fields?.slice()
+  const oldEntities: Entity[] = oldSection.entities?.slice()
 
   return (
     <>
@@ -46,12 +46,12 @@ const SectionEditor = ({
           })
         }}
         control={<Checkbox checked={section.required} />}
-        label={'Require all fields in this section'}
+        label={'Require all entities in this section'}
       />
-      {section.fields?.map(
-        (field: Field, fieldIndex: number): ReactElement => (
+      {section.entities?.map(
+        (entity: Entity, entityIndex: number): ReactElement => (
           <Box
-            key={fieldIndex}
+            key={entityIndex}
             sx={{
               alignItems: 'center',
               display: 'flex',
@@ -63,26 +63,26 @@ const SectionEditor = ({
               sx={{ marginRight: 1 }}
               color={'error'}
               onClick={(): void => {
-                oldFields.splice(fieldIndex, 1)
+                oldEntities.splice(entityIndex, 1)
                 onChange({
                   ...oldSection,
-                  fields: oldFields
+                  entities: oldEntities
                 })
               }}
             >
               {'Delete'}
             </Button>
             <TextField
-              label={`${field.type} name`}
-              value={field.name}
+              label={`${entity.type} name`}
+              value={entity.name}
               onChange={(e): void => {
-                const fields: Field[] = oldFields
-                fields[fieldIndex].id = e.target.value?.trim()?.toUpperCase()?.replace(/ /g, '_')
-                fields[fieldIndex].name = e.target.value
+                const entities: Entity[] = oldEntities
+                entities[entityIndex].id = e.target.value?.trim()?.toUpperCase()?.replace(/ /g, '_')
+                entities[entityIndex].name = e.target.value
 
                 onChange({
                   ...section,
-                  fields
+                  entities
                 })
               }}
             />
@@ -90,24 +90,24 @@ const SectionEditor = ({
         )
       )}
       <ButtonGroup size={'small'} color={'inherit'} sx={{ marginBottom: 2 }}>
-        {fieldTypes.map(
-          (fieldType: Field['type'], fieldTypeIndex: number): ReactElement => (
+        {entityTypes.map(
+          (entityType: Entity['type'], entityTypeIndex: number): ReactElement => (
             <Button
-              key={fieldTypeIndex}
+              key={entityTypeIndex}
               onClick={(): void => {
-                oldFields.push({
+                oldEntities.push({
                   id: new Date().getTime().toString(),
                   name: '',
-                  type: fieldType
+                  type: entityType
                 })
 
                 onChange({
                   ...section,
-                  fields: oldFields
+                  entities: oldEntities
                 })
               }}
             >
-              {`Add ${fieldType} field`}
+              {`Add ${entityType}`}
             </Button>
           )
         )}
