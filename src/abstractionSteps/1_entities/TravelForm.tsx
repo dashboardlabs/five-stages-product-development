@@ -16,11 +16,11 @@ const entitySx = {
 
 const TravelForm = (): ReactElement => (
   <>
-    <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+    <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
       {'Travel form'}
     </Typography>
     <Typography variant={'h5'}>{'Patient information'}</Typography>
-    <Typography color={'error'} variant={'overline'} sx={{ mb: 3 }}>
+    <Typography color={'error'} variant={'overline'} sx={{ marginBottom: 3 }}>
       {'Required'}
     </Typography>
     <Box sx={entitySx}>
@@ -35,12 +35,12 @@ const TravelForm = (): ReactElement => (
     <Box sx={entitySx}>
       <TextField required label={'Sex'} />
     </Box>
-    <Box sx={{ mb: 2 }} />
-    <Typography variant={'h5'} sx={{ mb: 3 }}>
+    <Box sx={{ marginBottom: 2 }} />
+    <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
       {'Passport'}
     </Typography>
     <Box sx={entitySx}>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Passport image'}
       </Typography>
       <Box component={'input'} type={'file'} name={'passportImage'} />
@@ -54,12 +54,12 @@ const TravelForm = (): ReactElement => (
     <Box sx={entitySx}>
       <TextField label={'Expiry date'} />
     </Box>
-    <Box sx={{ mb: 2 }} />
-    <Typography variant={'h5'} sx={{ mb: 3 }}>
+    <Box sx={{ marginBottom: 2 }} />
+    <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
       {'Vaccination record'}
     </Typography>
     <Box sx={entitySx}>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Vaccination card'}
       </Typography>
       <Box component={'input'} type={'file'} name={'vaccinationRecordCard'} />
@@ -100,8 +100,8 @@ const TravelForm = (): ReactElement => (
     <Box sx={entitySx}>
       <TextField label={'Fourth dose date'} />
     </Box>
-    <Box sx={{ mb: 2 }} />
-    <Typography variant={'h5'} sx={{ mb: 3 }}>
+    <Box sx={{ marginBottom: 2 }} />
+    <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
       {'Travel details'}
     </Typography>
     <Box sx={entitySx}>

@@ -63,11 +63,11 @@ const TravelForm = (): ReactElement => {
   return (
     <>
       <FormOutput code={body} />
-      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+      <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
         {'Travel form'}
       </Typography>
       <Typography variant={'h5'}>{'Patient information'}</Typography>
-      <Typography color={'error'} variant={'overline'} sx={{ mb: 3 }}>
+      <Typography color={'error'} variant={'overline'} sx={{ marginBottom: 3 }}>
         {'Required'}
       </Typography>
       <TextField
@@ -102,15 +102,15 @@ const TravelForm = (): ReactElement => {
           setPatientSex(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Passport'}
       </Typography>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Passport image'}
       </Typography>
       <Box
-        sx={{ mb: 3 }}
+        sx={{ marginBottom: 3 }}
         component={'input'}
         type={'file'}
         name={'passportImage'}
@@ -139,15 +139,15 @@ const TravelForm = (): ReactElement => {
           setPassportExpiryDate(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Vaccination record'}
       </Typography>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Vaccination card'}
       </Typography>
       <Box
-        sx={{ mb: 3 }}
+        sx={{ marginBottom: 3 }}
         component={'input'}
         type={'file'}
         name={'vaccinationRecordCard'}
@@ -239,8 +239,8 @@ const TravelForm = (): ReactElement => {
           setVaccinationRecordFourthDoseDate(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Travel details'}
       </Typography>
       <TextField
@@ -258,7 +258,7 @@ const TravelForm = (): ReactElement => {
         }}
       />
       <Button
-        sx={{ mt: 3 }}
+        sx={{ marginTop: 3 }}
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend

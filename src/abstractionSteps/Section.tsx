@@ -20,7 +20,7 @@ const Section = ({
     }}
   >
     <Typography variant={'h5'}>{label}</Typography>
-    <Typography color={required ? 'error' : null} variant={'overline'} sx={{ mb: 3 }}>
+    <Typography color={required ? 'error' : null} variant={'overline'} sx={{ marginBottom: 3 }}>
       {required ? 'REQUIRED: TRUE' : 'REQUIRED: FALSE'}
     </Typography>
     {children}

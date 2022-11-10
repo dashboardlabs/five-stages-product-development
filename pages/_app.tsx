@@ -53,21 +53,21 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       <Container
         maxWidth={'sm'}
         sx={{
-          mt: 2,
-          mb: 10,
+          alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          marginBottom: 10,
+          marginTop: 2
         }}
       >
         <Box
           component={'img'}
           sx={{
-            height: 128,
-            width: 128,
             borderRadius: 2,
-            mb: 2,
-            cursor: 'pointer'
+            cursor: 'pointer',
+            height: 128,
+            marginBottom: 2,
+            width: 128
           }}
           onClick={(): void => {
             window.open('http://dashlabs.ai/')

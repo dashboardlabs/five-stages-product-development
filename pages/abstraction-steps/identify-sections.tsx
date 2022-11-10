@@ -16,11 +16,11 @@ const IdentifySections = (): ReactElement => {
     <Container
       sx={{
         backgroundColor: '#fff',
-        p: 2,
+        padding: 2,
         borderRadius: 2
       }}
     >
-      <Breadcrumbs sx={{ mb: 3 }}>
+      <Breadcrumbs sx={{ marginBottom: 3 }}>
         <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>

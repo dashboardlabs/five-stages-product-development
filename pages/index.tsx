@@ -3,11 +3,12 @@ import NextLink from 'next/link'
 
 import Container from '@mui/material/Container'
 import List from '@mui/material/List'
-import ListSubheader from '@mui/material/ListSubheader'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
+import ListSubheader from '@mui/material/ListSubheader'
 import MuiLink from '@mui/material/Link'
 import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
 
 interface PageNavigationRoute {
   primary: string
@@ -63,7 +64,23 @@ const howToRoutes = [
 
 const HomePage = (): ReactElement => (
   <Container>
-    <List component={Paper} dense sx={{ mb: 3 }}>
+    <Paper sx={{ padding: 2, marginBottom: 1 }}>
+      <Typography variant={'body2'} paragraph>
+        {'This is part of a series of material documenting how we build product in Dashlabs.ai.'}
+      </Typography>
+      <Typography variant={'body2'} paragraph>
+        {'You can read more here:'}
+      </Typography>
+      <Typography
+        sx={{ fontFamily: 'monospace', cursor: 'pointer' }}
+        onClick={() => {
+          window.open('https://dlb.ai/5-stages-article')
+        }}
+      >
+        {'https://dlb.ai/5-stages-article'}
+      </Typography>
+    </Paper>
+    <List component={Paper} dense sx={{ marginBottom: 1 }}>
       <ListSubheader>{'5 stages of product development'}</ListSubheader>
       {routes.map(
         (route: PageNavigationRoute, index: number): ReactElement => (

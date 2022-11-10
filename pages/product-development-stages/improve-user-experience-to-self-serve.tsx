@@ -26,18 +26,18 @@ const ImproveUserExperienceToSelfServe = (): ReactElement => {
     <Container
       sx={{
         backgroundColor: '#fff',
-        p: 2,
+        padding: 2,
         borderRadius: 2
       }}
     >
-      <Breadcrumbs sx={{ mb: 3 }}>
+      <Breadcrumbs sx={{ marginBottom: 3 }}>
         <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
         <Typography color={'text.primary'}>{'5. Improve user experience to self-serve'}</Typography>
       </Breadcrumbs>
       <Button
-        sx={{ mb: 2 }}
+        sx={{ marginBottom: 2 }}
         fullWidth
         variant={'contained'}
         onClick={(): void => {
@@ -46,7 +46,7 @@ const ImproveUserExperienceToSelfServe = (): ReactElement => {
       >
         {'Open form editor'}
       </Button>
-      <ButtonGroup color={'inherit'} sx={{ mb: 2 }} size={'small'}>
+      <ButtonGroup color={'inherit'} sx={{ marginBottom: 2 }} size={'small'}>
         {Object.values(forms).map(
           (form: Form): ReactElement => (
             <Button

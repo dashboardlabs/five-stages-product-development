@@ -39,17 +39,17 @@ const ContactForm = (): ReactElement => {
   return (
     <>
       <FormOutput code={body} />
-      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+      <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
         {'Contact form'}
       </Typography>
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Patient information'}
       </Typography>
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Profile photo'}
       </Typography>
       <Box
-        sx={{ mb: 3 }}
+        sx={{ marginBottom: 3 }}
         component={'input'}
         type={'file'}
         name={'patientProfilePhoto'}
@@ -99,8 +99,8 @@ const ContactForm = (): ReactElement => {
           setPatientNationality(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Contact - email'}
       </Typography>
       <TextField
@@ -117,8 +117,8 @@ const ContactForm = (): ReactElement => {
         control={<Checkbox checked={contactPromotions} />}
         label={'Email me promotional materials'}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Contact - phone'}
       </Typography>
       <TextField
@@ -136,7 +136,7 @@ const ContactForm = (): ReactElement => {
         label={'This is my primary contact'}
       />
       <Button
-        sx={{ mt: 3 }}
+        sx={{ marginTop: 3 }}
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend

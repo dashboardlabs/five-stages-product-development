@@ -7,7 +7,7 @@ import Entity from '../Entity'
 
 const TravelForm = (): ReactElement => (
   <>
-    <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+    <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
       {'Travel form'}
     </Typography>
     <Box
@@ -18,7 +18,7 @@ const TravelForm = (): ReactElement => (
       }}
     >
       <Typography variant={'h5'}>{'Patient information'}</Typography>
-      <Typography color={'error'} variant={'overline'} sx={{ mb: 3 }}>
+      <Typography color={'error'} variant={'overline'} sx={{ marginBottom: 3 }}>
         {'Required'}
       </Typography>
       <Entity type={'STRING'} label={'First name'} />
@@ -33,7 +33,7 @@ const TravelForm = (): ReactElement => (
         padding: 1
       }}
     >
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Passport'}
       </Typography>
       <Entity type={'FILE'} label={'Passport image'} />
@@ -48,7 +48,7 @@ const TravelForm = (): ReactElement => (
         padding: 1
       }}
     >
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Vaccination record'}
       </Typography>
       <Entity type={'FILE'} label={'Vaccination card'} />
@@ -72,7 +72,7 @@ const TravelForm = (): ReactElement => (
         padding: 1
       }}
     >
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Travel details'}
       </Typography>
       <Entity type={'STRING'} label={'Destination'} />

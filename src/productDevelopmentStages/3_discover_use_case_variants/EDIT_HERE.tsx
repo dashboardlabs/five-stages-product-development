@@ -16,7 +16,7 @@ const CustomForm = (): ReactElement => {
   return (
     <>
       <FormOutput code={body} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Build your own form!'}
       </Typography>
       <TextField
@@ -27,7 +27,7 @@ const CustomForm = (): ReactElement => {
         }}
       />
       <Button
-        sx={{ mt: 3 }}
+        sx={{ marginTop: 3 }}
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend

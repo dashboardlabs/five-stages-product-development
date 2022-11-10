@@ -7,8 +7,8 @@ const Entity = ({ label, type }: { label: string; type: 'STRING' | 'BOOLEAN' | '
   <Box
     sx={{
       border: '2px solid red',
-      marginLeft: 0,
       marginBottom: 2,
+      marginLeft: 0,
       padding: 1
     }}
   >

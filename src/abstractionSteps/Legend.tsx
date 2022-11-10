@@ -14,25 +14,21 @@ const Legend = ({
   section?: boolean
   instance?: boolean
 }): ReactElement => (
-  <Box
-    sx={{
-      marginBottom: 3
-    }}
-  >
+  <Box sx={{ marginBottom: 3 }}>
     {entity && (
       <Box
         sx={{
+          alignItems: 'center',
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center'
+          flexDirection: 'row'
         }}
       >
         <Box
           sx={{
             backgroundColor: 'red',
             height: size,
-            width: size,
-            marginRight: 1
+            marginRight: 1,
+            width: size
           }}
         />
         <Typography variant={'body1'}>{'Entity'}</Typography>
@@ -41,17 +37,17 @@ const Legend = ({
     {section && (
       <Box
         sx={{
+          alignItems: 'center',
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center'
+          flexDirection: 'row'
         }}
       >
         <Box
           sx={{
             backgroundColor: 'blue',
             height: size,
-            width: size,
-            marginRight: 1
+            marginRight: 1,
+            width: size
           }}
         />
         <Typography variant={'body1'}>{'Section'}</Typography>
@@ -60,17 +56,17 @@ const Legend = ({
     {instance && (
       <Box
         sx={{
+          alignItems: 'center',
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center'
+          flexDirection: 'row'
         }}
       >
         <Box
           sx={{
             backgroundColor: 'green',
             height: size,
-            width: size,
-            marginRight: 1
+            marginRight: 1,
+            width: size
           }}
         />
         <Typography variant={'body1'}>{'Instance'}</Typography>

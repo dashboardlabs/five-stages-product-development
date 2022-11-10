@@ -33,17 +33,17 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
   return (
     <>
       <FormOutput code={values} />
-      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+      <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
         {form?.name}
       </Typography>
       {form?.sections.map(
         (section: Section, sectionIndex: number): ReactElement => (
-          <Box key={sectionIndex} sx={{ mb: 2 }}>
-            <Typography variant={'h5'} sx={!section.required && { mb: 3 }}>
+          <Box key={sectionIndex} sx={{ marginBottom: 2 }}>
+            <Typography variant={'h5'} sx={!section.required && { marginBottom: 3 }}>
               {section.name}
             </Typography>
             {section.required && (
-              <Typography color={'error'} variant={'overline'} sx={{ mb: 3 }}>
+              <Typography color={'error'} variant={'overline'} sx={{ marginBottom: 3 }}>
                 {'Required'}
               </Typography>
             )}
@@ -52,11 +52,11 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
                 <React.Fragment key={fieldIndex}>
                   {field.type === 'FILE' && (
                     <>
-                      <Typography variant={'body2'} sx={{ mb: 1 }}>
+                      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
                         {`${field.name}${section.required ? ' (Required)' : ''}`}
                       </Typography>
                       <Box
-                        sx={{ mb: 3 }}
+                        sx={{ marginBottom: 3 }}
                         component={'input'}
                         type={'file'}
                         id={field.id}
@@ -106,7 +106,7 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
       )}
       {form?.sections?.length > 0 && (
         <Button
-          sx={{ mt: 3 }}
+          sx={{ marginTop: 3 }}
           fullWidth
           onClick={(): void => {
             // Send to a singular endpoint in the backend

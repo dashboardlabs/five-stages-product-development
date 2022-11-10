@@ -7,7 +7,7 @@ import Section from '../Section'
 
 const TravelForm = (): ReactElement => (
   <>
-    <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+    <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
       {'Travel form'}
     </Typography>
     <Section label={'Patient information'} required>

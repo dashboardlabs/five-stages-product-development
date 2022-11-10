@@ -49,10 +49,10 @@ const EmploymentForm = (): ReactElement => {
   return (
     <>
       <FormOutput code={body} />
-      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+      <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
         {'Employment form'}
       </Typography>
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Patient information'}
       </Typography>
       <TextField
@@ -90,8 +90,8 @@ const EmploymentForm = (): ReactElement => {
           setPatientSex(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Employment'}
       </Typography>
       <FormControlLabel
@@ -101,11 +101,11 @@ const EmploymentForm = (): ReactElement => {
         control={<Checkbox checked={employmentEmployed} />}
         label={'I am currently employed'}
       />
-      <Typography variant={'body2'} sx={{ mb: 1 }}>
+      <Typography variant={'body2'} sx={{ marginBottom: 1 }}>
         {'Employment ID'}
       </Typography>
       <Box
-        sx={{ mb: 3 }}
+        sx={{ marginBottom: 3 }}
         component={'input'}
         type={'file'}
         name={'employmentId'}
@@ -134,8 +134,8 @@ const EmploymentForm = (): ReactElement => {
           setEmploymentJobTitle(e.target.value)
         }}
       />
-      <Box sx={{ mb: 2 }} />
-      <Typography variant={'h5'} sx={{ mb: 3 }}>
+      <Box sx={{ marginBottom: 2 }} />
+      <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Laboratory services'}
       </Typography>
       <FormControlLabel
@@ -181,7 +181,7 @@ const EmploymentForm = (): ReactElement => {
         label={'Fecalysis'}
       />
       <Button
-        sx={{ mt: 3 }}
+        sx={{ marginTop: 3 }}
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend

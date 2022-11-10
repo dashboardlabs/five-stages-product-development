@@ -6,10 +6,10 @@ import Button from '@mui/material/Button'
 const FormOutput = ({ code }: { code: unknown }): ReactElement => (
   <Box
     sx={{
-      p: 2,
-      mb: 3,
       backgroundColor: '#eaeaea',
-      borderRadius: 2
+      borderRadius: 2,
+      marginBottom: 3,
+      padding: 2
     }}
   >
     <code>
@@ -20,7 +20,7 @@ const FormOutput = ({ code }: { code: unknown }): ReactElement => (
       onClick={(): void => {
         console.log(code)
       }}
-      sx={{ mt: 3 }}
+      sx={{ marginTop: 3 }}
       variant={'outlined'}
       color={'inherit'}
     >

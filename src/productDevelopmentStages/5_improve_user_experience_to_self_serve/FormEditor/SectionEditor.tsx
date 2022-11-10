@@ -28,7 +28,7 @@ const SectionEditor = ({
   return (
     <>
       <TextField
-        sx={{ mb: 2 }}
+        sx={{ marginBottom: 2 }}
         label={'Section name'}
         value={section.name}
         onChange={(e): void => {
@@ -53,14 +53,14 @@ const SectionEditor = ({
           <Box
             key={fieldIndex}
             sx={{
+              alignItems: 'center',
               display: 'flex',
               flexDirection: 'row',
-              alignItems: 'center',
-              mb: 1
+              marginBottom: 1
             }}
           >
             <Button
-              sx={{ mr: 1 }}
+              sx={{ marginRight: 1 }}
               color={'error'}
               onClick={(): void => {
                 oldFields.splice(fieldIndex, 1)
@@ -89,7 +89,7 @@ const SectionEditor = ({
           </Box>
         )
       )}
-      <ButtonGroup size={'small'} color={'inherit'} sx={{ mb: 2 }}>
+      <ButtonGroup size={'small'} color={'inherit'} sx={{ marginBottom: 2 }}>
         {fieldTypes.map(
           (fieldType: Field['type'], fieldTypeIndex: number): ReactElement => (
             <Button

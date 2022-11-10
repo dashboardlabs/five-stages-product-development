@@ -13,7 +13,7 @@ const FormComponent = (): ReactElement => (
       padding: 1
     }}
   >
-    <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
+    <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
       {'Instance'}
     </Typography>
     <Section label={'Section 1'}>
