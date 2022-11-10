@@ -36,7 +36,7 @@ const IdentifyEntitiesPage = (): ReactElement => (
     <TravelForm />
     <NextLink href={'/abstraction-steps/identify-entity-types'} passHref>
       <Button variant={'outlined'} fullWidth>
-        {'Next step'}
+        {'Next'}
       </Button>
     </NextLink>
   </Container>

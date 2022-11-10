@@ -50,7 +50,7 @@ const entity = {
       <TravelForm />
       <NextLink href={'/abstraction-steps/identify-section-parameters'} passHref>
         <Button variant={'outlined'} fullWidth>
-          {'Next step'}
+          {'Next'}
         </Button>
       </NextLink>
     </Container>

@@ -37,7 +37,7 @@ const IdentifyEntityTypes = (): ReactElement => {
       <TravelForm />
       <NextLink href={'/abstraction-steps/identify-sections'} passHref>
         <Button variant={'outlined'} fullWidth>
-          {'Next step'}
+          {'Next'}
         </Button>
       </NextLink>
     </Container>
