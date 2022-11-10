@@ -11,16 +11,16 @@ import TextField from '@mui/material/TextField'
 
 import SectionEditor from './SectionEditor'
 
-import { Form, Section } from '../types'
+import { Instance, Section } from '../types'
 
-const FormEditor = ({
-  form,
-  setForm,
+const InstanceEditor = ({
+  instance,
+  setInstance,
   open,
   onClose
 }: {
-  form: Form
-  setForm: Dispatch<SetStateAction<Form>>
+  instance: Instance
+  setInstance: Dispatch<SetStateAction<Instance>>
   open: boolean
   onClose: VoidFunction
 }): ReactElement => {
@@ -28,15 +28,15 @@ const FormEditor = ({
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth={'sm'}>
-      <DialogTitle>{'Form editor'}</DialogTitle>
+      <DialogTitle>{'Instance editor'}</DialogTitle>
       <DialogContent>
         <TextField
           sx={{ marginTop: 1, marginBottom: 1 }}
-          label={'Form'}
-          value={form.name}
+          label={'Instance'}
+          value={instance.name}
           onChange={(e): void => {
-            setForm((previousForm: Form) => ({
-              ...previousForm,
+            setInstance((oldInstance: Instance) => ({
+              ...oldInstance,
               name: e.target.value
             }))
           }}
@@ -48,7 +48,7 @@ const FormEditor = ({
             setSelectedSectionIndex(newSelectedSectionIndex)
           }}
         >
-          {form.sections?.map(
+          {instance.sections?.map(
             (section: Section, sectionIndex: number): ReactElement => (
               <Tab key={sectionIndex} label={section.name} value={sectionIndex} />
             )
@@ -56,29 +56,29 @@ const FormEditor = ({
           <Tab
             label={'Add section'}
             onClick={(): void => {
-              setForm((oldForm: Form): Form => {
-                const newForm: Form = Object.assign({}, oldForm)
-                newForm.sections.push({
-                  name: `Section ${form.sections?.length + 1}`,
+              setInstance((oldInstance: Instance): Instance => {
+                const newInstance: Instance = Object.assign({}, oldInstance)
+                newInstance.sections.push({
+                  name: `Section ${instance.sections?.length + 1}`,
                   fields: []
                 })
 
-                return newForm
+                return newInstance
               })
             }}
           />
         </Tabs>
         <SectionEditor
-          section={form.sections[selectedSectionIndex]}
+          section={instance.sections[selectedSectionIndex]}
           onChange={(newSection: Section): void => {
-            setForm((oldForm: Form): Form => {
-              const newForm: Form = Object.assign({}, oldForm)
+            setInstance((oldInstance: Instance): Instance => {
+              const newInstance: Instance = Object.assign({}, oldInstance)
               if (newSection) {
-                newForm.sections[selectedSectionIndex] = newSection
+                newInstance.sections[selectedSectionIndex] = newSection
               } else {
-                newForm.sections.splice(selectedSectionIndex, 1)
+                newInstance.sections.splice(selectedSectionIndex, 1)
               }
-              return newForm
+              return newInstance
             })
           }}
         />
@@ -98,4 +98,4 @@ const FormEditor = ({
   )
 }
 
-export default FormEditor
+export default InstanceEditor

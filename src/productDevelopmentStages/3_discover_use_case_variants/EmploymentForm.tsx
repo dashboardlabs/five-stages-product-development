@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import FormOutput from '../FormOutput'
+import InstanceOutput from '../InstanceOutput'
 
 const EmploymentForm = (): ReactElement => {
   const [patientFirstName, setPatientFirstName] = useState<string>('')
@@ -48,9 +48,9 @@ const EmploymentForm = (): ReactElement => {
 
   return (
     <>
-      <FormOutput code={body} />
+      <InstanceOutput code={body} />
       <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-        {'Employment form'}
+        {'Employment'}
       </Typography>
       <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Patient information'}
@@ -185,7 +185,7 @@ const EmploymentForm = (): ReactElement => {
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/forms/employment', {
+          // fetch('https://localhost:3000/instances/employment', {
           //   method: 'POST',
           //   body: JSON.stringify(body)
           // })

@@ -8,7 +8,7 @@ import Entity from '../Entity'
 const TravelForm = (): ReactElement => (
   <>
     <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-      {'Travel form'}
+      {'Travel'}
     </Typography>
     <Box
       sx={{

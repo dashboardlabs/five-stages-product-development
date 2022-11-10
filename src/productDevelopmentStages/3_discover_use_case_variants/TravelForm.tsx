@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import FormOutput from '../FormOutput'
+import InstanceOutput from '../InstanceOutput'
 
 const TravelForm = (): ReactElement => {
   const [patientFirstName, setPatientFirstName] = useState<string>('')
@@ -62,9 +62,9 @@ const TravelForm = (): ReactElement => {
 
   return (
     <>
-      <FormOutput code={body} />
+      <InstanceOutput code={body} />
       <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-        {'Travel form'}
+        {'Travel'}
       </Typography>
       <Typography variant={'h5'}>{'Patient information'}</Typography>
       <Typography color={'error'} variant={'overline'} sx={{ marginBottom: 3 }}>
@@ -262,7 +262,7 @@ const TravelForm = (): ReactElement => {
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/forms/travel', {
+          // fetch('https://localhost:3000/instances/travel', {
           //   method: 'POST',
           //   body: JSON.stringify(body)
           // })

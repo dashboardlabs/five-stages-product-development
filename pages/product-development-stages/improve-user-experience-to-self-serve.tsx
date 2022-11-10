@@ -8,19 +8,19 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-import { Form } from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/types'
-import FormComponent from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/FormComponent'
-import FormEditor from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/FormEditor'
-import forms from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/forms'
+import { Instance } from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/types'
+import InstanceComponent from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/InstanceComponent'
+import InstanceEditor from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/InstanceEditor'
+import instances from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/instances'
 
 const ImproveUserExperienceToSelfServe = (): ReactElement => {
-  const [form, setForm] = useState<Form>({
-    id: 'userGeneratedForm',
-    name: 'User generated form',
+  const [instance, setInstance] = useState<Instance>({
+    id: 'userGenerated',
+    name: 'User generated',
     sections: []
   })
 
-  const [formEditorOpen, setFormEditorOpen] = useState<boolean>(false)
+  const [editorOpen, setEditorOpen] = useState<boolean>(false)
 
   return (
     <Container
@@ -41,29 +41,29 @@ const ImproveUserExperienceToSelfServe = (): ReactElement => {
         fullWidth
         variant={'contained'}
         onClick={(): void => {
-          setFormEditorOpen(true)
+          setEditorOpen(true)
         }}
       >
-        {'Open form editor'}
+        {'Open editor'}
       </Button>
       <ButtonGroup color={'inherit'} sx={{ marginBottom: 2 }} size={'small'}>
-        {Object.values(forms).map(
-          (form: Form): ReactElement => (
+        {Object.values(instances).map(
+          (instance: Instance): ReactElement => (
             <Button
-              key={form.id}
+              key={instance.id}
               onClick={(): void => {
-                setForm(form)
+                setInstance(instance)
               }}
             >
-              {`Load ${form.name}`}
+              {`Load ${instance.name}`}
             </Button>
           )
         )}
         <Button
           onClick={(): void => {
-            setForm({
-              id: 'userGeneratedForm',
-              name: 'User generated form',
+            setInstance({
+              id: 'userGenerated',
+              name: 'User generated',
               sections: []
             })
           }}
@@ -71,13 +71,13 @@ const ImproveUserExperienceToSelfServe = (): ReactElement => {
           {'Clear'}
         </Button>
       </ButtonGroup>
-      <FormComponent form={form} />
-      <FormEditor
-        form={form}
-        setForm={setForm}
-        open={formEditorOpen}
+      <InstanceComponent instance={instance} />
+      <InstanceEditor
+        instance={instance}
+        setInstance={setInstance}
+        open={editorOpen}
         onClose={(): void => {
-          setFormEditorOpen(false)
+          setEditorOpen(false)
         }}
       />
     </Container>

@@ -8,7 +8,7 @@ import Section from '../Section'
 const TravelForm = (): ReactElement => (
   <>
     <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-      {'Travel form'}
+      {'Travel'}
     </Typography>
     <Section label={'Patient information'} required>
       <Entity type={'STRING'} label={'First name'} />

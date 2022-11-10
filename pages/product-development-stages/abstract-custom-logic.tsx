@@ -1,45 +1,26 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import NextLink from 'next/link'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup'
 import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
-import Tab from '@mui/material/Tab'
-import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 
-import { Form } from 'src/productDevelopmentStages/4_abstract_custom_logic/types'
-import FormComponent from 'src/productDevelopmentStages/4_abstract_custom_logic/FormComponent'
-import FormEditor from 'src/productDevelopmentStages/4_abstract_custom_logic/FormEditor'
-import forms from 'src/productDevelopmentStages/4_abstract_custom_logic/forms'
-
-const pageId = '4-form-id'
+import { Instance } from 'src/productDevelopmentStages/4_abstract_custom_logic/types'
+import InstanceComponent from 'src/productDevelopmentStages/4_abstract_custom_logic/InstanceComponent'
+import InstanceEditor from 'src/productDevelopmentStages/4_abstract_custom_logic/InstanceEditor'
+import instances from 'src/productDevelopmentStages/4_abstract_custom_logic/instances'
 
 const AbstractCustomLogic = (): ReactElement => {
-  const [formId, setFormId] = useState<string>('travel')
-  const [userGeneratedForm, setUserGeneratedForm] = useState<Form>(null)
-  const [formEditorOpen, setFormEditorOpen] = useState<boolean>(false)
+  const [instance, setInstance] = useState<Instance>({
+    id: 'userGenerated',
+    name: 'User generated',
+    sections: []
+  })
 
-  useEffect(() => {
-    const storedFormId: string = window.localStorage.getItem(pageId)
-
-    if (storedFormId) {
-      setFormId(storedFormId)
-    }
-  }, [])
-
-  useEffect(() => {
-    window.localStorage.setItem(pageId, formId)
-  }, [formId])
-
-  const returnForm = (formId: string): Form => {
-    if (formId === 'userGeneratedForm') {
-      return userGeneratedForm
-    }
-
-    return forms[formId]
-  }
+  const [editorOpen, setEditorOpen] = useState<boolean>(false)
 
   return (
     <Container
@@ -55,38 +36,48 @@ const AbstractCustomLogic = (): ReactElement => {
         </NextLink>
         <Typography color={'text.primary'}>{'4. Abstract custom logic'}</Typography>
       </Breadcrumbs>
-      <Tabs
-        value={formId}
-        onChange={(_e: React.SyntheticEvent, newFormId: string): void => {
-          setFormId(newFormId)
+      <Button
+        sx={{ marginBottom: 2 }}
+        fullWidth
+        variant={'contained'}
+        onClick={(): void => {
+          setEditorOpen(true)
         }}
       >
-        <Tab label={'Create your own form'} value={'userGeneratedForm'} />
-        {Object.values(forms).map(
-          (form: Form): ReactElement => (
-            <Tab key={form.id} label={form.name} value={form.id} />
+        {'Open editor'}
+      </Button>
+      <ButtonGroup color={'inherit'} sx={{ marginBottom: 2 }} size={'small'}>
+        {Object.values(instances).map(
+          (instance: Instance): ReactElement => (
+            <Button
+              key={instance.id}
+              onClick={(): void => {
+                setInstance(instance)
+              }}
+            >
+              {`Load ${instance.name}`}
+            </Button>
           )
         )}
-      </Tabs>
-      {formId === 'userGeneratedForm' && (
         <Button
-          sx={{ marginBottom: 2 }}
-          fullWidth
-          variant={'outlined'}
           onClick={(): void => {
-            setFormEditorOpen(true)
+            setInstance({
+              id: 'userGenerated',
+              name: 'User generated',
+              sections: []
+            })
           }}
         >
-          {'Open form editor'}
+          {'Clear'}
         </Button>
-      )}
-      <FormComponent form={returnForm(formId)} />
-      <FormEditor
-        form={userGeneratedForm}
-        setForm={setUserGeneratedForm}
-        open={formEditorOpen}
+      </ButtonGroup>
+      <InstanceComponent instance={instance} />
+      <InstanceEditor
+        instance={instance}
+        setInstance={setInstance}
+        open={editorOpen}
         onClose={(): void => {
-          setFormEditorOpen(false)
+          setEditorOpen(false)
         }}
       />
     </Container>

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import FormOutput from '../FormOutput'
+import InstanceOutput from '../InstanceOutput'
 
 const CustomForm = (): ReactElement => {
   const [yourValue, setYourValue] = useState<string>('')
@@ -15,9 +15,9 @@ const CustomForm = (): ReactElement => {
 
   return (
     <>
-      <FormOutput code={body} />
+      <InstanceOutput code={body} />
       <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
-        {'Build your own form!'}
+        {'Build one yourself!'}
       </Typography>
       <TextField
         label={'Open source code to edit file'}
@@ -31,7 +31,7 @@ const CustomForm = (): ReactElement => {
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/forms/your-form', {
+          // fetch('https://localhost:3000/instances/your-instance', {
           //   method: 'POST',
           //   body: JSON.stringify(body)
           // })

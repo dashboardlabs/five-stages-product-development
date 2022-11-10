@@ -1,4 +1,4 @@
-export interface Form {
+export interface Instance {
   id: string
   name: string
   sections: Section[]

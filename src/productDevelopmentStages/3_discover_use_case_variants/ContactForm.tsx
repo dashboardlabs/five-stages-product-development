@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import FormOutput from '../FormOutput'
+import InstanceOutput from '../InstanceOutput'
 
 const ContactForm = (): ReactElement => {
   const [patientProfilePhoto, setPatientProfilePhoto] = useState<string>('')
@@ -38,9 +38,9 @@ const ContactForm = (): ReactElement => {
 
   return (
     <>
-      <FormOutput code={body} />
+      <InstanceOutput code={body} />
       <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-        {'Contact form'}
+        {'Contact'}
       </Typography>
       <Typography variant={'h5'} sx={{ marginBottom: 3 }}>
         {'Patient information'}
@@ -140,7 +140,7 @@ const ContactForm = (): ReactElement => {
         fullWidth
         onClick={(): void => {
           // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/forms/contact', {
+          // fetch('https://localhost:3000/instances/contact', {
           //   method: 'POST',
           //   body: JSON.stringify(body)
           // })

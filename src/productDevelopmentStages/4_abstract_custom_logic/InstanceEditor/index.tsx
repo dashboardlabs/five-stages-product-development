@@ -15,38 +15,38 @@ import 'prismjs/themes/prism.css'
 
 import isValidJSON from './isValidJSON'
 import sample from './sample'
-import { Form } from '../types'
+import { Instance } from '../types'
 
-const FormEditor = ({
-  form,
-  setForm,
+const InstanceEditor = ({
+  instance,
+  setInstance,
   open,
   onClose
 }: {
-  form: Form
-  setForm: Dispatch<SetStateAction<Form>>
+  instance: Instance
+  setInstance: Dispatch<SetStateAction<Instance>>
   open: boolean
   onClose: VoidFunction
 }): ReactElement => {
-  const [formCode, setFormCode] = useState<string>('')
+  const [instanceCode, setInstanceCode] = useState<string>('')
 
   useEffect(() => {
-    if (form) {
-      setFormCode(JSON.stringify(form, undefined, 2))
+    if (instance) {
+      setInstanceCode(JSON.stringify(instance, undefined, 2))
     } else {
-      setFormCode(sample)
+      setInstanceCode(sample)
     }
   }, [open])
 
-  const validJSON = isValidJSON(formCode)
+  const validJSON = isValidJSON(instanceCode)
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth={'sm'}>
-      <DialogTitle>{'Form editor'}</DialogTitle>
+      <DialogTitle>{'Instance editor'}</DialogTitle>
       <DialogContent>
         <Editor
-          value={formCode}
-          onValueChange={(code) => setFormCode(code)}
+          value={instanceCode}
+          onValueChange={(code) => setInstanceCode(code)}
           highlight={(code) => highlight(code, languages.js)}
           padding={10}
           style={{
@@ -55,7 +55,7 @@ const FormEditor = ({
           }}
         />
         <Typography variant={'overline'} color={validJSON ? 'default' : 'error'}>
-          {validJSON ? 'Code is valid' : 'Code is invalid'}
+          {validJSON ? 'Valid JSON' : 'Invalid JSON'}
         </Typography>
       </DialogContent>
       <DialogActions>
@@ -66,7 +66,7 @@ const FormEditor = ({
           color={'primary'}
           variant={'text'}
           onClick={(): void => {
-            setForm(JSON.parse(formCode))
+            setInstance(JSON.parse(instanceCode))
             onClose()
           }}
           disabled={!validJSON}
@@ -78,4 +78,4 @@ const FormEditor = ({
   )
 }
 
-export default FormEditor
+export default InstanceEditor

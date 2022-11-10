@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
-const FormOutput = ({ code }: { code: unknown }): ReactElement => (
+const InstanceOutput = ({ code }: { code: unknown }): ReactElement => (
   <Box
     sx={{
       backgroundColor: '#eaeaea',
@@ -13,7 +13,7 @@ const FormOutput = ({ code }: { code: unknown }): ReactElement => (
     }}
   >
     <code>
-      {'This is the printed output of this form'}
+      {'This is the printed output'}
       <pre>{JSON.stringify(code, null, 2)}</pre>
     </code>
     <Button
@@ -29,4 +29,4 @@ const FormOutput = ({ code }: { code: unknown }): ReactElement => (
   </Box>
 )
 
-export default FormOutput
+export default InstanceOutput

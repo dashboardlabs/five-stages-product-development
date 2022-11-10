@@ -7,18 +7,18 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import FormOutput from '../FormOutput'
+import InstanceOutput from '../InstanceOutput'
 
-import { Form, Section, Field, Values } from './types'
+import { Instance, Section, Field, Values } from './types'
 
-// Passing a JSON into this object generates the form for you
+// Passing a JSON into this object generates the instance for you
 
-const FormComponent = ({ form }: { form: Form }): ReactElement => {
+const InstanceComponent = ({ instance }: { instance: Instance }): ReactElement => {
   const [values, setValues] = useState<Values>({})
 
   useEffect(() => {
     const newValues = {}
-    form?.sections.forEach((section: Section) => {
+    instance?.sections.forEach((section: Section) => {
       section.fields.forEach((field: Field) => {
         if (field.type === 'BOOLEAN') {
           newValues[field.id] = false
@@ -28,15 +28,15 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
       })
     })
     setValues(newValues)
-  }, [form])
+  }, [instance])
 
   return (
     <>
-      <FormOutput code={values} />
+      <InstanceOutput code={values} />
       <Typography variant={'h4'} color={'primary'} sx={{ marginBottom: 3 }}>
-        {form.name}
+        {instance?.name}
       </Typography>
-      {form?.sections.map(
+      {instance?.sections.map(
         (section: Section, sectionIndex: number): ReactElement => (
           <Box key={sectionIndex} sx={{ marginBottom: 2 }}>
             <Typography variant={'h5'} sx={!section.required && { marginBottom: 3 }}>
@@ -104,13 +104,13 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
           </Box>
         )
       )}
-      {form?.sections?.length > 0 && (
+      {instance?.sections?.length > 0 && (
         <Button
           sx={{ marginTop: 3 }}
           fullWidth
           onClick={(): void => {
             // Send to a singular endpoint in the backend
-            // fetch('https://localhost:3000/forms', {
+            // fetch('https://localhost:3000/instances', {
             //   method: 'POST',
             //   body: JSON.stringify(values)
             // })
@@ -124,4 +124,4 @@ const FormComponent = ({ form }: { form: Form }): ReactElement => {
   )
 }
 
-export default FormComponent
+export default InstanceComponent

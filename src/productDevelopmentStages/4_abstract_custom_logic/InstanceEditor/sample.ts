@@ -1,6 +1,6 @@
 const sample = `{
-  "id": "userGeneratedForm",
-  "name": "User generated form",
+  "id": "userGenerated",
+  "name": "User generated",
   "sections": [{
     "name": "Section",
     "required": true,

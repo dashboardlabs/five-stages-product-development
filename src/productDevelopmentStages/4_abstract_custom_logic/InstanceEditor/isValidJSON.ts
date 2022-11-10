@@ -1,6 +1,6 @@
-const isValidJSON = (formCode: string): boolean => {
+const isValidJSON = (formJSON: string): boolean => {
   try {
-    JSON.parse(formCode)
+    JSON.parse(formJSON)
     return true
   } catch {
     return false

@@ -13,22 +13,22 @@ import EmploymentForm from 'src/productDevelopmentStages/3_discover_use_case_var
 import TravelForm from 'src/productDevelopmentStages/3_discover_use_case_variants/TravelForm'
 import YourForm from 'src/productDevelopmentStages/3_discover_use_case_variants/EDIT_HERE'
 
-const pageId = '3-form-id'
+const pageId = '3-instance-id'
 
 const DiscoverUseCaseVariants = (): ReactElement => {
-  const [formId, setFormId] = useState<string>('travel')
+  const [instanceId, setInstanceId] = useState<string>('travel')
 
   useEffect(() => {
-    const storedFormId: string = window.localStorage.getItem(pageId)
+    const storedPageId: string = window.localStorage.getItem(pageId)
 
-    if (storedFormId) {
-      setFormId(storedFormId)
+    if (storedPageId) {
+      setInstanceId(storedPageId)
     }
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem(pageId, formId)
-  }, [formId])
+    window.localStorage.setItem(pageId, instanceId)
+  }, [instanceId])
 
   return (
     <Container
@@ -46,20 +46,20 @@ const DiscoverUseCaseVariants = (): ReactElement => {
         <Typography color={'text.primary'}>{'3. Discover use-case variants'}</Typography>
       </Breadcrumbs>
       <Tabs
-        value={formId}
-        onChange={(_e: React.SyntheticEvent, newFormId: string): void => {
-          setFormId(newFormId)
+        value={instanceId}
+        onChange={(_e: React.SyntheticEvent, newInstanceId: string): void => {
+          setInstanceId(newInstanceId)
         }}
       >
         <Tab label={'Travel'} value={'travel'} />
         <Tab label={'Employment'} value={'employment'} />
         <Tab label={'Contact'} value={'contact'} />
-        <Tab label={'Your form'} value={'yourForm'} />
+        <Tab label={'Your form'} value={'yourInstance'} />
       </Tabs>
-      {formId === 'travel' && <TravelForm />}
-      {formId === 'employment' && <EmploymentForm />}
-      {formId === 'contact' && <ContactForm />}
-      {formId === 'yourForm' && <YourForm />}
+      {instanceId === 'travel' && <TravelForm />}
+      {instanceId === 'employment' && <EmploymentForm />}
+      {instanceId === 'contact' && <ContactForm />}
+      {instanceId === 'yourInstance' && <YourForm />}
     </Container>
   )
 }

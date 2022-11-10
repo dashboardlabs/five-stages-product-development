@@ -1,8 +1,8 @@
-import { Form } from '../types'
+import { Instance } from '../types'
 
-const travel: Form = {
+const travel: Instance = {
   id: 'travel',
-  name: 'Travel form',
+  name: 'Travel',
   sections: [
     {
       name: 'Patient information',
