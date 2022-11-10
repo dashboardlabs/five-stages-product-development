@@ -49,7 +49,7 @@ const entity = {
       <Legend entity section />
       <TravelForm />
       <NextLink href={'/abstraction-steps/identify-section-parameters'} passHref>
-        <Button variant={'outlined'} fullWidth>
+        <Button variant={'outlined'} fullWidth sx={{ marginTop: 3 }}>
           {'Next'}
         </Button>
       </NextLink>

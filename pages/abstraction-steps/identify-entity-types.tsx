@@ -36,7 +36,7 @@ const IdentifyEntityTypes = (): ReactElement => {
       <Legend entity />
       <TravelForm />
       <NextLink href={'/abstraction-steps/identify-sections'} passHref>
-        <Button variant={'outlined'} fullWidth>
+        <Button variant={'outlined'} fullWidth sx={{ marginTop: 3 }}>
           {'Next'}
         </Button>
       </NextLink>

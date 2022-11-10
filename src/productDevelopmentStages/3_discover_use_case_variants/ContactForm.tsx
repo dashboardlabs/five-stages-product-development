@@ -1,7 +1,6 @@
 import React, { ReactElement, useState } from 'react'
 
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
@@ -135,20 +134,6 @@ const ContactForm = (): ReactElement => {
         control={<Checkbox checked={contactEmergency} />}
         label={'This is my primary contact'}
       />
-      <Button
-        sx={{ marginTop: 3 }}
-        fullWidth
-        onClick={(): void => {
-          // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/instances/contact', {
-          //   method: 'POST',
-          //   body: JSON.stringify(body)
-          // })
-        }}
-        variant={'contained'}
-      >
-        {'Submit'}
-      </Button>
     </>
   )
 }

@@ -1,7 +1,6 @@
 import React, { ReactElement, useState } from 'react'
 
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
@@ -180,20 +179,6 @@ const EmploymentForm = (): ReactElement => {
         control={<Checkbox checked={laboratoryServicesFecalysis} />}
         label={'Fecalysis'}
       />
-      <Button
-        sx={{ marginTop: 3 }}
-        fullWidth
-        onClick={(): void => {
-          // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/instances/employment', {
-          //   method: 'POST',
-          //   body: JSON.stringify(body)
-          // })
-        }}
-        variant={'contained'}
-      >
-        {'Submit'}
-      </Button>
     </>
   )
 }

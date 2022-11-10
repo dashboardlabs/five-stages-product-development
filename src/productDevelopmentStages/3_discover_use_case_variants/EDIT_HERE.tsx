@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from 'react'
 
-import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
@@ -26,20 +25,6 @@ const CustomForm = (): ReactElement => {
           setYourValue(e.target.value)
         }}
       />
-      <Button
-        sx={{ marginTop: 3 }}
-        fullWidth
-        onClick={(): void => {
-          // Send to a specific endpoint in the backend
-          // fetch('https://localhost:3000/instances/your-instance', {
-          //   method: 'POST',
-          //   body: JSON.stringify(body)
-          // })
-        }}
-        variant={'contained'}
-      >
-        {'Submit'}
-      </Button>
     </>
   )
 }

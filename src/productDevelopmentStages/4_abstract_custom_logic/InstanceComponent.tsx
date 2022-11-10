@@ -1,7 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import TextField from '@mui/material/TextField'
@@ -103,22 +102,6 @@ const InstanceComponent = ({ instance }: { instance: Instance }): ReactElement =
             )}
           </Box>
         )
-      )}
-      {instance?.sections?.length > 0 && (
-        <Button
-          sx={{ marginTop: 3 }}
-          fullWidth
-          onClick={(): void => {
-            // Send to a singular endpoint in the backend
-            // fetch('https://localhost:3000/instances', {
-            //   method: 'POST',
-            //   body: JSON.stringify(values)
-            // })
-          }}
-          variant={'contained'}
-        >
-          {'Submit'}
-        </Button>
       )}
     </>
   )

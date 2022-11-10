@@ -102,6 +102,11 @@ const AbstractCustomLogic = (): ReactElement => {
           setEditorOpen(false)
         }}
       />
+      <NextLink href={'/product-development-stages/improve-user-experience-to-self-serve'} passHref>
+        <Button variant={'outlined'} fullWidth sx={{ marginTop: 3 }}>
+          {'Next'}
+        </Button>
+      </NextLink>
     </Container>
   )
 }

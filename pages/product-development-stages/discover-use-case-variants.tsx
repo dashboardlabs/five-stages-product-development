@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import NextLink from 'next/link'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs'
+import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Tab from '@mui/material/Tab'
@@ -60,6 +61,11 @@ const DiscoverUseCaseVariants = (): ReactElement => {
       {instanceId === 'employment' && <EmploymentForm />}
       {instanceId === 'contact' && <ContactForm />}
       {instanceId === 'yourInstance' && <YourForm />}
+      <NextLink href={'/product-development-stages/abstract-custom-logic'} passHref>
+        <Button variant={'outlined'} fullWidth sx={{ marginTop: 3 }}>
+          {'Next'}
+        </Button>
+      </NextLink>
     </Container>
   )
 }
