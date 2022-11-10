@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render(): ReactElement {
@@ -21,7 +21,7 @@ class MyDocument extends Document {
           />
           <link href={'https://cdn00.dashlabs.app/DashlabsLogo-BlueBackground.png'} rel={'apple-touch-icon'} />
         </Head>
-        <body style={{ backgroundColor: '#bdbdbd'}}>
+        <body style={{ backgroundColor: '#bdbdbd' }}>
           <Main />
           <NextScript />
         </body>

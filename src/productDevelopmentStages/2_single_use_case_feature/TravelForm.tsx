@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 
 import FormOutput from '../FormOutput'
 
-export default (): ReactElement => {
+const TravelForm = (): ReactElement => {
   const [patientFirstName, setPatientFirstName] = useState<string>('')
   const [patientLastName, setPatientLastName] = useState<string>('')
   const [patientBirthday, setPatientBirthday] = useState<string>('')
@@ -60,28 +60,14 @@ export default (): ReactElement => {
     travelDepartureDate
   }
 
-	return (
-		<>
-			<FormOutput
-				code={body}
-			/>
-      <Typography
-        variant={'h4'}
-        color={'primary'}
-        sx={{ mb: 3 }}
-      >
+  return (
+    <>
+      <FormOutput code={body} />
+      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
         {'Travel form'}
       </Typography>
-      <Typography
-        variant={'h5'}
-      >
-        {'Patient information'}
-      </Typography>
-      <Typography
-        color={'error'}
-        variant={'overline'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'}>{'Patient information'}</Typography>
+      <Typography color={'error'} variant={'overline'} sx={{ mb: 3 }}>
         {'Required'}
       </Typography>
       <TextField
@@ -117,10 +103,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Passport'}
       </Typography>
       <Typography variant={'body2'} sx={{ mb: 1 }}>
@@ -157,10 +140,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Vaccination record'}
       </Typography>
       <Typography variant={'body2'} sx={{ mb: 1 }}>
@@ -260,10 +240,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Travel details'}
       </Typography>
       <TextField
@@ -294,6 +271,8 @@ export default (): ReactElement => {
       >
         {'Submit'}
       </Button>
-		</>
-	)
+    </>
+  )
 }
+
+export default TravelForm

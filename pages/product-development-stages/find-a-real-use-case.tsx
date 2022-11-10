@@ -6,7 +6,7 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
-export default (): ReactElement =>
+const FindARealUseCase = (): ReactElement => (
   <Container
     maxWidth={'sm'}
     sx={{
@@ -15,24 +15,16 @@ export default (): ReactElement =>
       borderRadius: 2
     }}
   >
-    <Breadcrumbs
-      sx={{ mb: 3 }}
-    >
-      <NextLink
-        href={'/'}
-        passHref
-      >
+    <Breadcrumbs sx={{ mb: 3 }}>
+      <NextLink href={'/'} passHref>
         <MuiLink>{'Home'}</MuiLink>
       </NextLink>
-      <Typography
-        color={'text.primary'}
-      >
-        {'1. Find a real use-case'}
-      </Typography>
+      <Typography color={'text.primary'}>{'1. Find a real use-case'}</Typography>
     </Breadcrumbs>
-    <Typography
-        color={'text.primary'}
-      >
+    <Typography color={'text.primary'}>
       {'Code should not be written at this stage. Engineers should talk to users and understand their problems.'}
     </Typography>
   </Container>
+)
+
+export default FindARealUseCase

@@ -15,7 +15,7 @@ import YourForm from 'src/productDevelopmentStages/3_discover_use_case_variants/
 
 const pageId = '3-form-id'
 
-export default (): ReactElement => {
+const DiscoverUseCaseVariants = (): ReactElement => {
   const [formId, setFormId] = useState<string>('travel')
 
   useEffect(() => {
@@ -39,43 +39,22 @@ export default (): ReactElement => {
         borderRadius: 2
       }}
     >
-			<Breadcrumbs
-        sx={{ mb: 3 }}
-      >
-        <NextLink
-          href={'/'}
-          passHref
-        >
+      <Breadcrumbs sx={{ mb: 3 }}>
+        <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
-				<Typography
-          color={'text.primary'}
-        >
-          {'3. Discover use-case variants'}
-        </Typography>
-			</Breadcrumbs>
+        <Typography color={'text.primary'}>{'3. Discover use-case variants'}</Typography>
+      </Breadcrumbs>
       <Tabs
         value={formId}
         onChange={(_e: React.SyntheticEvent, newFormId: string): void => {
           setFormId(newFormId)
         }}
       >
-        <Tab
-          label={'Travel'}
-          value={'travel'}
-        />
-        <Tab
-          label={'Employment'}
-          value={'employment'}
-        />
-        <Tab
-          label={'Contact'}
-          value={'contact'}
-        />
-        <Tab
-          label={'Your form'}
-          value={'yourForm'}
-        />
+        <Tab label={'Travel'} value={'travel'} />
+        <Tab label={'Employment'} value={'employment'} />
+        <Tab label={'Contact'} value={'contact'} />
+        <Tab label={'Your form'} value={'yourForm'} />
       </Tabs>
       {formId === 'travel' && <TravelForm />}
       {formId === 'employment' && <EmploymentForm />}
@@ -84,3 +63,5 @@ export default (): ReactElement => {
     </Container>
   )
 }
+
+export default DiscoverUseCaseVariants

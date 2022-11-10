@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement } from 'react'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
@@ -13,13 +13,13 @@ const Legend = ({
   entity?: boolean
   section?: boolean
   instance?: boolean
-}): ReactElement =>
+}): ReactElement => (
   <Box
     sx={{
       marginBottom: 3
     }}
   >
-    {entity &&
+    {entity && (
       <Box
         sx={{
           display: 'flex',
@@ -35,14 +35,10 @@ const Legend = ({
             marginRight: 1
           }}
         />
-        <Typography
-          variant={'body1'}
-        >
-          {'Entity'}
-        </Typography>
+        <Typography variant={'body1'}>{'Entity'}</Typography>
       </Box>
-    }
-    {section &&
+    )}
+    {section && (
       <Box
         sx={{
           display: 'flex',
@@ -58,14 +54,10 @@ const Legend = ({
             marginRight: 1
           }}
         />
-        <Typography
-          variant={'body1'}
-        >
-          {'Section'}
-        </Typography>
+        <Typography variant={'body1'}>{'Section'}</Typography>
       </Box>
-    }
-    {instance &&
+    )}
+    {instance && (
       <Box
         sx={{
           display: 'flex',
@@ -81,13 +73,10 @@ const Legend = ({
             marginRight: 1
           }}
         />
-        <Typography
-          variant={'body1'}
-        >
-          {'Instance'}
-        </Typography>
+        <Typography variant={'body1'}>{'Instance'}</Typography>
       </Box>
-    }
+    )}
   </Box>
+)
 
 export default Legend

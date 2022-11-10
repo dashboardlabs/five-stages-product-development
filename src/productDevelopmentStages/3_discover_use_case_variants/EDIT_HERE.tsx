@@ -6,22 +6,17 @@ import Typography from '@mui/material/Typography'
 
 import FormOutput from '../FormOutput'
 
-export default (): ReactElement => {
+const CustomForm = (): ReactElement => {
   const [yourValue, setYourValue] = useState<string>('')
 
   const body = {
     yourValue
   }
 
-	return (
-		<>
-			<FormOutput
-				code={body}
-			/>
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+  return (
+    <>
+      <FormOutput code={body} />
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Build your own form!'}
       </Typography>
       <TextField
@@ -45,6 +40,8 @@ export default (): ReactElement => {
       >
         {'Submit'}
       </Button>
-		</>
-	)
+    </>
+  )
 }
+
+export default CustomForm

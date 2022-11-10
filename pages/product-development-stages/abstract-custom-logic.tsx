@@ -16,7 +16,7 @@ import forms from 'src/productDevelopmentStages/4_abstract_custom_logic/forms'
 
 const pageId = '4-form-id'
 
-export default (): ReactElement => {
+const AbstractCustomLogic = (): ReactElement => {
   const [formId, setFormId] = useState<string>('travel')
   const [userGeneratedForm, setUserGeneratedForm] = useState<Form>(null)
   const [formEditorOpen, setFormEditorOpen] = useState<boolean>(false)
@@ -37,7 +37,7 @@ export default (): ReactElement => {
     if (formId === 'userGeneratedForm') {
       return userGeneratedForm
     }
-  
+
     return forms[formId]
   }
 
@@ -49,40 +49,26 @@ export default (): ReactElement => {
         borderRadius: 2
       }}
     >
-			<Breadcrumbs
-        sx={{ mb: 3 }}
-      >
-        <NextLink
-          href={'/'}
-          passHref
-        >
+      <Breadcrumbs sx={{ mb: 3 }}>
+        <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
-				<Typography
-          color={'text.primary'}
-        >
-          {'4. Abstract custom logic'}
-        </Typography>
-			</Breadcrumbs>
+        <Typography color={'text.primary'}>{'4. Abstract custom logic'}</Typography>
+      </Breadcrumbs>
       <Tabs
         value={formId}
         onChange={(_e: React.SyntheticEvent, newFormId: string): void => {
           setFormId(newFormId)
         }}
       >
-        <Tab
-          label={'Create your own form'}
-          value={'userGeneratedForm'}
-        />
-        {Object.values(forms).map((form: Form): ReactElement =>
-          <Tab
-            key={form.id}
-            label={form.name}
-            value={form.id}
-          />
+        <Tab label={'Create your own form'} value={'userGeneratedForm'} />
+        {Object.values(forms).map(
+          (form: Form): ReactElement => (
+            <Tab key={form.id} label={form.name} value={form.id} />
+          )
         )}
       </Tabs>
-      {formId === 'userGeneratedForm' &&
+      {formId === 'userGeneratedForm' && (
         <Button
           sx={{ mb: 2 }}
           fullWidth
@@ -93,10 +79,8 @@ export default (): ReactElement => {
         >
           {'Open form editor'}
         </Button>
-      }
-      <FormComponent
-        form={returnForm(formId)}
-      />
+      )}
+      <FormComponent form={returnForm(formId)} />
       <FormEditor
         form={userGeneratedForm}
         setForm={setUserGeneratedForm}
@@ -108,3 +92,5 @@ export default (): ReactElement => {
     </Container>
   )
 }
+
+export default AbstractCustomLogic

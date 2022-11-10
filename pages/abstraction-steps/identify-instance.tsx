@@ -6,11 +6,11 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
+import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 import Legend from 'src/abstractionSteps/Legend'
 import TravelForm from 'src/abstractionSteps/5_instance/FormComponent'
-import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 
-export default (): ReactElement =>
+const IdentifyInstance = (): ReactElement => (
   <Container
     sx={{
       backgroundColor: '#fff',
@@ -18,31 +18,16 @@ export default (): ReactElement =>
       borderRadius: 2
     }}
   >
-    <Breadcrumbs
-      sx={{ mb: 3 }}
-    >
-      <NextLink
-        href={'/'}
-        passHref
-      >
+    <Breadcrumbs sx={{ mb: 3 }}>
+      <NextLink href={'/'} passHref>
         <MuiLink>{'Home'}</MuiLink>
       </NextLink>
-      <Typography
-        color={'text.primary'}
-      >
-        {'5. Identify instance'}
-      </Typography>
+      <Typography color={'text.primary'}>{'5. Identify instance'}</Typography>
     </Breadcrumbs>
-    <Typography
-      variant={'body1'}
-      sx={{ marginBottom: 3 }}
-    >
+    <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
       {'Identify instance. This is the parent level when saved into the database.'}
     </Typography>
-    <Typography
-      variant={'body1'}
-      sx={{ marginBottom: 3 }}
-    >
+    <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
       {'In this form, we outlined the instance in green.'}
     </Typography>
     <CodeSnippet
@@ -62,10 +47,9 @@ const entity = {
   label: string
 }`}
     />
-    <Legend
-      entity
-      section
-      instance
-    />
+    <Legend entity section instance />
     <TravelForm />
   </Container>
+)
+
+export default IdentifyInstance

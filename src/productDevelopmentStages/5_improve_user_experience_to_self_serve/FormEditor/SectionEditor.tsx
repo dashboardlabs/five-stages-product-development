@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement } from 'react'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -11,7 +11,7 @@ import { Field, Section } from '../types'
 
 const fieldTypes: string[] = ['BOOLEAN', 'STRING', 'FILE']
 
-export default ({
+const SectionEditor = ({
   section,
   onChange
 }: {
@@ -25,7 +25,7 @@ export default ({
   const oldSection: Section = Object.assign({}, section)
   const oldFields: Field[] = oldSection.fields?.slice()
 
-	return (
+  return (
     <>
       <TextField
         sx={{ mb: 2 }}
@@ -48,67 +48,68 @@ export default ({
         control={<Checkbox checked={section.required} />}
         label={'Require all fields in this section'}
       />
-      {section.fields?.map((field: Field, fieldIndex: number): ReactElement => 
-        <Box
-          key={fieldIndex}
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            mb: 1
-          }}
-        >
-          <Button
-            sx={{ mr: 1 }}
-            color={'error'}
-            onClick={(): void => {
-              oldFields.splice(fieldIndex, 1)
-              onChange({
-                ...oldSection,
-                fields: oldFields
-              })
+      {section.fields?.map(
+        (field: Field, fieldIndex: number): ReactElement => (
+          <Box
+            key={fieldIndex}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              mb: 1
             }}
           >
-            {'Delete'}
-          </Button>
-          <TextField
-            label={`${field.type} name`}
-            value={field.name}
-            onChange={(e): void => {
-              const fields: Field[] = oldFields
-              fields[fieldIndex].id = e.target.value?.trim()?.toUpperCase()?.replace(/ /g, '_')
-              fields[fieldIndex].name = e.target.value
+            <Button
+              sx={{ mr: 1 }}
+              color={'error'}
+              onClick={(): void => {
+                oldFields.splice(fieldIndex, 1)
+                onChange({
+                  ...oldSection,
+                  fields: oldFields
+                })
+              }}
+            >
+              {'Delete'}
+            </Button>
+            <TextField
+              label={`${field.type} name`}
+              value={field.name}
+              onChange={(e): void => {
+                const fields: Field[] = oldFields
+                fields[fieldIndex].id = e.target.value?.trim()?.toUpperCase()?.replace(/ /g, '_')
+                fields[fieldIndex].name = e.target.value
 
-              onChange({
-                ...section,
-                fields
-              })
-            }}
-          />
-        </Box>
+                onChange({
+                  ...section,
+                  fields
+                })
+              }}
+            />
+          </Box>
+        )
       )}
-      <ButtonGroup
-        size={'small'}
-        color={'inherit'}
-        sx={{ mb: 2 }}
-      >
-        {fieldTypes.map((fieldType: Field['type']): ReactElement =>
-          <Button
-            onClick={(): void => {
-              oldFields.push({
-                id: new Date().getTime().toString(),
-                name: '',
-                type: fieldType
-              })
+      <ButtonGroup size={'small'} color={'inherit'} sx={{ mb: 2 }}>
+        {fieldTypes.map(
+          (fieldType: Field['type'], fieldTypeIndex: number): ReactElement => (
+            <Button
+              key={fieldTypeIndex}
+              onClick={(): void => {
+                oldFields.push({
+                  id: new Date().getTime().toString(),
+                  name: '',
+                  type: fieldType
+                })
 
-              onChange({
-                ...section,
-                fields: oldFields
-              })
-            }}
-          >
-            {`Add ${fieldType} field`}
-          </Button>
+                onChange({
+                  ...section,
+                  fields: oldFields
+                })
+              }}
+            >
+              {`Add ${fieldType} field`}
+            </Button>
+          )
         )}
       </ButtonGroup>
       <Button
@@ -122,5 +123,7 @@ export default ({
         {`Delete ${section.name || 'section'}`}
       </Button>
     </>
-	)
+  )
 }
+
+export default SectionEditor

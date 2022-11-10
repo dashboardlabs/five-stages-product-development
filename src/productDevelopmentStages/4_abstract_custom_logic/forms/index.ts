@@ -3,7 +3,7 @@ import employment from './employment'
 import travel from './travel'
 
 export default {
-  travel,
+  contact,
   employment,
-  contact
+  travel
 }

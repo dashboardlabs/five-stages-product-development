@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 
 import FormOutput from '../FormOutput'
 
-export default (): ReactElement => {
+const EmploymentForm = (): ReactElement => {
   const [patientFirstName, setPatientFirstName] = useState<string>('')
   const [patientLastName, setPatientLastName] = useState<string>('')
   const [patientBirthday, setPatientBirthday] = useState<string>('')
@@ -46,22 +46,13 @@ export default (): ReactElement => {
     laboratoryServicesFecalysis
   }
 
-	return (
-		<>
-			<FormOutput
-				code={body}
-			/>
-      <Typography
-        variant={'h4'}
-        color={'primary'}
-        sx={{ mb: 3 }}
-      >
+  return (
+    <>
+      <FormOutput code={body} />
+      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
         {'Employment form'}
       </Typography>
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Patient information'}
       </Typography>
       <TextField
@@ -100,10 +91,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Employment'}
       </Typography>
       <FormControlLabel
@@ -147,10 +135,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Laboratory services'}
       </Typography>
       <FormControlLabel
@@ -209,6 +194,8 @@ export default (): ReactElement => {
       >
         {'Submit'}
       </Button>
-		</>
-	)
+    </>
+  )
 }
+
+export default EmploymentForm

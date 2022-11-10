@@ -7,11 +7,11 @@ import Container from '@mui/material/Container'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
+import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 import Legend from 'src/abstractionSteps/Legend'
 import TravelForm from 'src/abstractionSteps/4_section_parameters/TravelForm'
-import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 
-export default (): ReactElement => {
+const IdentifySectionParameters = (): ReactElement => {
   return (
     <Container
       sx={{
@@ -20,31 +20,16 @@ export default (): ReactElement => {
         borderRadius: 2
       }}
     >
-			<Breadcrumbs
-        sx={{ mb: 3 }}
-      >
-        <NextLink
-          href={'/'}
-          passHref
-        >
+      <Breadcrumbs sx={{ mb: 3 }}>
+        <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
-				<Typography
-          color={'text.primary'}
-        >
-          {'4. Identify section parameters'}
-        </Typography>
-			</Breadcrumbs>
-      <Typography
-        variant={'body1'}
-        sx={{ marginBottom: 3 }}
-      >
+        <Typography color={'text.primary'}>{'4. Identify section parameters'}</Typography>
+      </Breadcrumbs>
+      <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
         {'Identify section parameters. Section parameters are customizations applied to a set of entities.'}
       </Typography>
-      <Typography
-        variant={'body1'}
-        sx={{ marginBottom: 3 }}
-      >
+      <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
         {'In this form, we identify "REQUIRED" as a section parameter.'}
       </Typography>
       <CodeSnippet
@@ -59,22 +44,15 @@ const entity = {
   label: string
 }`}
       />
-      <Legend
-        entity
-        section
-      />
+      <Legend entity section />
       <TravelForm />
-      <NextLink
-        href={'/abstraction-steps/identify-instance'}
-        passHref
-      >
-        <Button
-          variant={'outlined'}
-          fullWidth
-        >
+      <NextLink href={'/abstraction-steps/identify-instance'} passHref>
+        <Button variant={'outlined'} fullWidth>
           {'Next step'}
         </Button>
       </NextLink>
     </Container>
   )
 }
+
+export default IdentifySectionParameters

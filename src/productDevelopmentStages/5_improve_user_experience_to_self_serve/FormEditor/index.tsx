@@ -13,29 +13,22 @@ import SectionEditor from './SectionEditor'
 
 import { Form, Section } from '../types'
 
-export default ({
+const FormEditor = ({
   form,
   setForm,
   open,
   onClose
 }: {
-  form: Form,
+  form: Form
   setForm: Dispatch<SetStateAction<Form>>
   open: boolean
   onClose: VoidFunction
 }): ReactElement => {
   const [selectedSectionIndex, setSelectedSectionIndex] = useState<number>(0)
 
-	return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      fullWidth
-      maxWidth={'sm'}
-    >
-      <DialogTitle>
-        {'Form editor'}
-      </DialogTitle>
+  return (
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth={'sm'}>
+      <DialogTitle>{'Form editor'}</DialogTitle>
       <DialogContent>
         <TextField
           sx={{ marginTop: 1, marginBottom: 1 }}
@@ -55,12 +48,10 @@ export default ({
             setSelectedSectionIndex(newSelectedSectionIndex)
           }}
         >
-          {form.sections?.map((section: Section, sectionIndex: number): ReactElement =>
-            <Tab
-              key={sectionIndex}
-              label={section.name}
-              value={sectionIndex}
-            />
+          {form.sections?.map(
+            (section: Section, sectionIndex: number): ReactElement => (
+              <Tab key={sectionIndex} label={section.name} value={sectionIndex} />
+            )
           )}
           <Tab
             label={'Add section'}
@@ -71,7 +62,7 @@ export default ({
                   name: `Section ${form.sections?.length + 1}`,
                   fields: []
                 })
-  
+
                 return newForm
               })
             }}
@@ -104,5 +95,7 @@ export default ({
         </Button>
       </DialogActions>
     </Dialog>
-	)
+  )
 }
+
+export default FormEditor

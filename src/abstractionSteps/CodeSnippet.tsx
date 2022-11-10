@@ -2,11 +2,7 @@ import React, { ReactElement } from 'react'
 
 import Box from '@mui/material/Box'
 
-export default ({
-  value
-}: {
-  value: string
-}): ReactElement =>
+const CodeSnippet = ({ value }: { value: string }): ReactElement => (
   <Box
     sx={{
       p: 2,
@@ -16,8 +12,9 @@ export default ({
     }}
   >
     <code>
-      <pre>
-        {value}
-      </pre>
+      <pre>{value}</pre>
     </code>
   </Box>
+)
+
+export default CodeSnippet

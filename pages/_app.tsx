@@ -11,7 +11,7 @@ const theme: Theme = createTheme({
       defaultProps: {
         size: 'small',
         fullWidth: true,
-        margin: 'dense',
+        margin: 'dense'
       }
     },
     MuiFormControlLabel: {
@@ -44,17 +44,12 @@ const theme: Theme = createTheme({
   }
 })
 
-
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>
-        {'5 Stages of product development'}
-      </title>
+      <title>{'5 Stages of product development'}</title>
     </Head>
-    <ThemeProvider
-      theme={theme}
-    >
+    <ThemeProvider theme={theme}>
       <Container
         maxWidth={'sm'}
         sx={{
@@ -79,9 +74,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
           }}
           src={'https://cdn00.dashlabs.app/DashlabsLogo-BlueBackground.png'}
         />
-        <Component
-          {...pageProps}
-        />
+        <Component {...pageProps} />
       </Container>
     </ThemeProvider>
   </>

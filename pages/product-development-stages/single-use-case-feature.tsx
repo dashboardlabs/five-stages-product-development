@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 import TravelForm from 'src/productDevelopmentStages/2_single_use_case_feature/TravelForm'
 
-export default (): ReactElement =>
+const SingleUseCaseFeature = (): ReactElement => (
   <Container
     maxWidth={'sm'}
     sx={{
@@ -17,20 +17,14 @@ export default (): ReactElement =>
       borderRadius: 2
     }}
   >
-    <Breadcrumbs
-      sx={{ mb: 3 }}
-    >
-      <NextLink
-        href={'/'}
-        passHref
-      >
+    <Breadcrumbs sx={{ mb: 3 }}>
+      <NextLink href={'/'} passHref>
         <MuiLink>{'Home'}</MuiLink>
       </NextLink>
-      <Typography
-        color={'text.primary'}
-      >
-        {'2. Single use-case feature'}
-      </Typography>
+      <Typography color={'text.primary'}>{'2. Single use-case feature'}</Typography>
     </Breadcrumbs>
     <TravelForm />
   </Container>
+)
+
+export default SingleUseCaseFeature

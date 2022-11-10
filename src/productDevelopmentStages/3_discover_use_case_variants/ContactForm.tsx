@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 
 import FormOutput from '../FormOutput'
 
-export default (): ReactElement => {
+const ContactForm = (): ReactElement => {
   const [patientProfilePhoto, setPatientProfilePhoto] = useState<string>('')
   const [patientFirstName, setPatientFirstName] = useState<string>('')
   const [patientLastName, setPatientLastName] = useState<string>('')
@@ -36,22 +36,13 @@ export default (): ReactElement => {
     contactEmergency
   }
 
-	return (
-		<>
-			<FormOutput
-				code={body}
-			/>
-      <Typography
-        variant={'h4'}
-        color={'primary'}
-        sx={{ mb: 3 }}
-      >
+  return (
+    <>
+      <FormOutput code={body} />
+      <Typography variant={'h4'} color={'primary'} sx={{ mb: 3 }}>
         {'Contact form'}
       </Typography>
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Patient information'}
       </Typography>
       <Typography variant={'body2'} sx={{ mb: 1 }}>
@@ -109,10 +100,7 @@ export default (): ReactElement => {
         }}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Contact - email'}
       </Typography>
       <TextField
@@ -130,10 +118,7 @@ export default (): ReactElement => {
         label={'Email me promotional materials'}
       />
       <Box sx={{ mb: 2 }} />
-      <Typography
-        variant={'h5'}
-        sx={{ mb: 3 }}
-      >
+      <Typography variant={'h5'} sx={{ mb: 3 }}>
         {'Contact - phone'}
       </Typography>
       <TextField
@@ -164,6 +149,8 @@ export default (): ReactElement => {
       >
         {'Submit'}
       </Button>
-		</>
-	)
+    </>
+  )
 }
+
+export default ContactForm

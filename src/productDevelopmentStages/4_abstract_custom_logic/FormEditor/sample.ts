@@ -1,4 +1,4 @@
-export default `{
+const sample = `{
   "id": "userGeneratedForm",
   "name": "User generated form",
   "sections": [{
@@ -19,3 +19,5 @@ export default `{
     }]
   }]
 }`
+
+export default sample

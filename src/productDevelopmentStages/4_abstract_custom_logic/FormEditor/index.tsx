@@ -17,7 +17,7 @@ import isValidJSON from './isValidJSON'
 import sample from './sample'
 import { Form } from '../types'
 
-export default ({
+const FormEditor = ({
   form,
   setForm,
   open,
@@ -40,40 +40,26 @@ export default ({
 
   const validJSON = isValidJSON(formCode)
 
-	return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      fullWidth
-      maxWidth={'sm'}
-    >
-      <DialogTitle>
-        {'Form editor'}
-      </DialogTitle>
+  return (
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth={'sm'}>
+      <DialogTitle>{'Form editor'}</DialogTitle>
       <DialogContent>
         <Editor
           value={formCode}
-          onValueChange={code => setFormCode(code)}
-          highlight={code => highlight(code, languages.js)}
+          onValueChange={(code) => setFormCode(code)}
+          highlight={(code) => highlight(code, languages.js)}
           padding={10}
           style={{
             fontFamily: '"Fira code", "Fira Mono", monospace',
-            fontSize: 14,
+            fontSize: 14
           }}
         />
-        <Typography
-          variant={'overline'}
-          color={validJSON ? 'default' : 'error'}
-        >
+        <Typography variant={'overline'} color={validJSON ? 'default' : 'error'}>
           {validJSON ? 'Code is valid' : 'Code is invalid'}
         </Typography>
       </DialogContent>
       <DialogActions>
-        <Button
-          color={'error'}
-          variant={'text'}
-          onClick={onClose}
-        >
+        <Button color={'error'} variant={'text'} onClick={onClose}>
           {'Cancel'}
         </Button>
         <Button
@@ -89,5 +75,7 @@ export default ({
         </Button>
       </DialogActions>
     </Dialog>
-	)
+  )
 }
+
+export default FormEditor

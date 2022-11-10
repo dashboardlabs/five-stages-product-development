@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 import Legend from 'src/abstractionSteps/Legend'
 import TravelForm from 'src/abstractionSteps/1_entities/TravelForm'
 
-export default (): ReactElement =>
+const IdentifyEntitiesPage = (): ReactElement => (
   <Container
     sx={{
       backgroundColor: '#fff',
@@ -18,46 +18,28 @@ export default (): ReactElement =>
       borderRadius: 2
     }}
   >
-    <Breadcrumbs
-      sx={{ mb: 3 }}
-    >
-      <NextLink
-        href={'/'}
-        passHref
-      >
+    <Breadcrumbs sx={{ mb: 3 }}>
+      <NextLink href={'/'} passHref>
         <MuiLink>{'Home'}</MuiLink>
       </NextLink>
-      <Typography
-        color={'text.primary'}
-      >
-        {'1. Identify entities'}
-      </Typography>
+      <Typography color={'text.primary'}>{'1. Identify entities'}</Typography>
     </Breadcrumbs>
-    <Typography
-      variant={'body1'}
-      sx={{ marginBottom: 3 }}
-    >
-      {'Identify entities. Entities are the building blocks of your product. You can think of it as a Lego block. Small pieces, with different colors, forming something whole.'}
+    <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
+      {
+        'Identify entities. Entities are the building blocks of your product. You can think of it as a Lego block. Small pieces, with different colors, forming something whole.'
+      }
     </Typography>
-    <Typography
-      variant={'body1'}
-      sx={{ marginBottom: 3 }}
-    >
+    <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
       {'In this form, we outlined the entities in red.'}
     </Typography>
-    <Legend
-      entity
-    />
+    <Legend entity />
     <TravelForm />
-    <NextLink
-      href={'/abstraction-steps/identify-entity-types'}
-      passHref
-    >
-      <Button
-        variant={'outlined'}
-        fullWidth
-      >
+    <NextLink href={'/abstraction-steps/identify-entity-types'} passHref>
+      <Button variant={'outlined'} fullWidth>
         {'Next step'}
       </Button>
     </NextLink>
   </Container>
+)
+
+export default IdentifyEntitiesPage

@@ -1,4 +1,4 @@
-export default (formCode: string): boolean => {
+const isValidJSON = (formCode: string): boolean => {
   try {
     JSON.parse(formCode)
     return true
@@ -6,3 +6,5 @@ export default (formCode: string): boolean => {
     return false
   }
 }
+
+export default isValidJSON

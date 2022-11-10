@@ -11,7 +11,7 @@ import Legend from 'src/abstractionSteps/Legend'
 import TravelForm from 'src/abstractionSteps/2_entity_types/TravelForm'
 import CodeSnippet from 'src/abstractionSteps/CodeSnippet'
 
-export default (): ReactElement => {
+const IdentifyEntityTypes = (): ReactElement => {
   return (
     <Container
       sx={{
@@ -20,51 +20,28 @@ export default (): ReactElement => {
         borderRadius: 2
       }}
     >
-			<Breadcrumbs
-        sx={{ mb: 3 }}
-      >
-        <NextLink
-          href={'/'}
-          passHref
-        >
+      <Breadcrumbs sx={{ mb: 3 }}>
+        <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
-				<Typography
-          color={'text.primary'}
-        >
-          {'2. Identify entity types'}
-        </Typography>
-			</Breadcrumbs>
-      <Typography
-        variant={'body1'}
-        sx={{ marginBottom: 3 }}
-      >
+        <Typography color={'text.primary'}>{'2. Identify entity types'}</Typography>
+      </Breadcrumbs>
+      <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
         {'Identify entity types. Entity types allow you entities to be customized.'}
       </Typography>
-      <Typography
-        variant={'body1'}
-        sx={{ marginBottom: 3 }}
-      >
+      <Typography variant={'body1'} sx={{ marginBottom: 3 }}>
         {'In this form, we wrote down the types.'}
       </Typography>
-      <CodeSnippet
-        value={`const entity = { \n type: string \n label: string \n}`}
-      />
-      <Legend
-        entity
-      />
+      <CodeSnippet value={'const entity = { \n type: string \n label: string \n}'} />
+      <Legend entity />
       <TravelForm />
-      <NextLink
-        href={'/abstraction-steps/identify-sections'}
-        passHref
-      >
-        <Button
-          variant={'outlined'}
-          fullWidth
-        >
+      <NextLink href={'/abstraction-steps/identify-sections'} passHref>
+        <Button variant={'outlined'} fullWidth>
           {'Next step'}
         </Button>
       </NextLink>
     </Container>
   )
 }
+
+export default IdentifyEntityTypes

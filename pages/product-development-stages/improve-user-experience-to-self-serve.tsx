@@ -13,7 +13,7 @@ import FormComponent from 'src/productDevelopmentStages/5_improve_user_experienc
 import FormEditor from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/FormEditor'
 import forms from 'src/productDevelopmentStages/5_improve_user_experience_to_self_serve/forms'
 
-export default (): ReactElement => {
+const ImproveUserExperienceToSelfServe = (): ReactElement => {
   const [form, setForm] = useState<Form>({
     id: 'userGeneratedForm',
     name: 'User generated form',
@@ -30,21 +30,12 @@ export default (): ReactElement => {
         borderRadius: 2
       }}
     >
-			<Breadcrumbs
-        sx={{ mb: 3 }}
-      >
-        <NextLink
-          href={'/'}
-          passHref
-        >
+      <Breadcrumbs sx={{ mb: 3 }}>
+        <NextLink href={'/'} passHref>
           <MuiLink>{'Home'}</MuiLink>
         </NextLink>
-				<Typography
-          color={'text.primary'}
-        >
-          {'5. Improve user experience to self-serve'}
-        </Typography>
-			</Breadcrumbs>
+        <Typography color={'text.primary'}>{'5. Improve user experience to self-serve'}</Typography>
+      </Breadcrumbs>
       <Button
         sx={{ mb: 2 }}
         fullWidth
@@ -55,36 +46,32 @@ export default (): ReactElement => {
       >
         {'Open form editor'}
       </Button>
-      <ButtonGroup
-        color={'inherit'}
-        sx={{ mb: 2 }}
-        size={'small'}
-      >
-        {Object.values(forms).map((form: Form): ReactElement =>
-          <Button
-            key={form.id}
-            onClick={(): void => {
-              setForm(form)
-            }}
-          >
-            {`Load ${form.name}`}
-          </Button>
+      <ButtonGroup color={'inherit'} sx={{ mb: 2 }} size={'small'}>
+        {Object.values(forms).map(
+          (form: Form): ReactElement => (
+            <Button
+              key={form.id}
+              onClick={(): void => {
+                setForm(form)
+              }}
+            >
+              {`Load ${form.name}`}
+            </Button>
+          )
         )}
-          <Button
-            onClick={(): void => {
-              setForm({
-                id: 'userGeneratedForm',
-                name: 'User generated form',
-                sections: []
-              })
-            }}
-          >
-            {'Clear'}
-          </Button>
+        <Button
+          onClick={(): void => {
+            setForm({
+              id: 'userGeneratedForm',
+              name: 'User generated form',
+              sections: []
+            })
+          }}
+        >
+          {'Clear'}
+        </Button>
       </ButtonGroup>
-      <FormComponent
-        form={form}
-      />
+      <FormComponent form={form} />
       <FormEditor
         form={form}
         setForm={setForm}
@@ -96,3 +83,5 @@ export default (): ReactElement => {
     </Container>
   )
 }
+
+export default ImproveUserExperienceToSelfServe
